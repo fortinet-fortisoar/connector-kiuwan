@@ -1,0 +1,412 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Kiuwan - 1.0.0",
+      "description": null,
+      "visible": true,
+      "image": null,
+      "uuid": "53b132ac-d436-41e0-83d9-21100e9b9b47",
+      "id": 173,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Analysis",
+          "aliasName": null,
+          "tag": null,
+          "description": "Delete a specific analysis details from Kiuwan based on the analysis code that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809498,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b60a793d-290b-4adb-ae60-9191e8cd1ebe",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Analysis",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "analysis_code": "A-7e3-16e5b1aad2a"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "delete_analysis",
+                "operationTitle": "Delete Analysis",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "349402fa-c487-4f8e-b121-87ed14265169"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "cec9e7c8-1ded-4f91-85b8-724571ad796d",
+                "title": "Kiuwan: Delete Analysis",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b60a793d-290b-4adb-ae60-9191e8cd1ebe"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Delete Analysis",
+              "targetStep": "/api/3/workflow_steps/349402fa-c487-4f8e-b121-87ed14265169",
+              "sourceStep": "/api/3/workflow_steps/b60a793d-290b-4adb-ae60-9191e8cd1ebe",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f3922e70-82d1-4177-ac2e-9471ea042b73"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2df757f0-3702-46bd-9efb-0ea60e1a8a7a",
+          "id": 2267,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Analysis List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of analysis from Kuiwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809436,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Analysis List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "page": 1,
+                  "count": 500,
+                  "status": "",
+                  "app_name": "",
+                  "end_date": "",
+                  "deliveries": "",
+                  "start_date": "",
+                  "audit_status": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_analysis_list",
+                "operationTitle": "Get Analysis List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9fb9d2bc-b9d7-4202-a0cb-274eb4f1f996"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "b900e631-1c8e-4797-af5f-23110533b804",
+                "title": "Kiuwan: Get Analysis List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Analysis List",
+              "targetStep": "/api/3/workflow_steps/9fb9d2bc-b9d7-4202-a0cb-274eb4f1f996",
+              "sourceStep": "/api/3/workflow_steps/cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "837f3af1-f018-4003-80d5-e852f5d74daa"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "4282ee99-6e6a-4b03-b6a8-5eefc7ab13ee",
+          "id": 2266,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Progress Summary for Action Plan",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the current and the past main metrics and indicators of an application for an action plan from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809583,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/384f7754-d1e9-40f1-bd54-11daacef96fd",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2979cdb2-2449-43dd-8da2-cc09a4f92306",
+                "title": "Kiuwan: Get Progress Summary for Action Plan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "384f7754-d1e9-40f1-bd54-11daacef96fd"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Progress Summary for Action Plan",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myapp",
+                  "action_name": "sample",
+                  "creation_date": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_progress_summary_for_action_plan",
+                "operationTitle": "Get Progress Summary for Action Plan",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "828bc304-7522-4e32-8331-95b7b8b69fd9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Progress Summary for Action Plan",
+              "targetStep": "/api/3/workflow_steps/828bc304-7522-4e32-8331-95b7b8b69fd9",
+              "sourceStep": "/api/3/workflow_steps/384f7754-d1e9-40f1-bd54-11daacef96fd",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "4b3f73a5-fc76-462c-9ae5-966480b02408"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "8277989b-c926-4caf-8754-b6fdee9794f3",
+          "id": 2268,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create Mutes for Rule or File",
+          "aliasName": null,
+          "tag": null,
+          "description": "Create a mutes for a rule/file in Kiuwan based on the application name and other parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809380,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/23fc2d45-3aea-4328-a7da-2c79aad34884",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "81189abd-12cb-4eb0-b9f6-dd310acb7a04",
+                "title": "Kiuwan: Create Mutes for Rule or File",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "23fc2d45-3aea-4328-a7da-2c79aad34884"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Mutes for Rule or File",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "rule": "",
+                  "reason": "",
+                  "comment": "",
+                  "app_name": "myapp",
+                  "file_name": "",
+                  "file_pattern": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "create_mutes_for_rule_or_file",
+                "operationTitle": "Create Mutes for Rule or File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "6fb842b6-1bf3-42b6-b5a5-09bb1d901b02"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Mutes for Rule or File",
+              "targetStep": "/api/3/workflow_steps/6fb842b6-1bf3-42b6-b5a5-09bb1d901b02",
+              "sourceStep": "/api/3/workflow_steps/23fc2d45-3aea-4328-a7da-2c79aad34884",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f25fa7ed-b120-45dd-8482-38529586cbc5"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9648b013-5de5-4fc5-aa4b-4b11b607ca73",
+          "id": 2265,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "kiuwan"
+  ]
+}

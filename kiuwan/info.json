@@ -1,0 +1,370 @@
+{
+  "name": "kiuwan",
+  "label": "Kiuwan",
+  "version": "1.0.0",
+  "description": "",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Utilities",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the Graylog server to which you will connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": "https://api.kiuwan.com"
+      },
+      {
+        "title": "Username",
+        "description": "Specify the Username used to access the Graylog server to which you will connect and perform the automated operations.",
+        "type": "text",
+        "name": "username",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Password",
+        "description": "Specify the Password used to access the Graylog server to which you will connect and perform the automated operations.",
+        "type": "password",
+        "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_progress_summary_for_action_plan",
+      "title": "Get Progress Summary for Action Plan",
+      "description": "Retrieves the current and the past main metrics and indicators of an application for an action plan from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_progress_summary_for_action_plan",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve progress summary for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve progress summary for action plan from Kiuwan."
+        },
+        {
+          "title": "Action Plan Name",
+          "description": "Specify the name of the action plan for which you want to retrieve progress summary for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "action_name",
+          "tooltip": "Specify the name of the action plan for which you want to retrieve progress summary for action plan from Kiuwan."
+        },
+        {
+          "title": "Creation Date",
+          "description": "Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "creation_date",
+          "tooltip": "Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "creation": "",
+        "expiration": "",
+        "createdBy": "",
+        "assignedTo": "",
+        "progress": "",
+        "estimate": "",
+        "pendingEffort": "",
+        "purged": "",
+        "riskIndexBefore": "",
+        "globalIndicatorBefore": "",
+        "effortToTargetBefore": "",
+        "qualityIndicatorsBefore": {
+          "Efficiency": "",
+          "Portability": "",
+          "Maintainability": "",
+          "Reliability ": "",
+          "Security    ": ""
+        },
+        "riskIndexAfter": "",
+        "globalIndicatorAfter": "",
+        "effortToTargetAfter": "",
+        "qualityIndicatorsAfter": {
+          "Efficiency": "",
+          "Portability": "",
+          "Maintainability": "",
+          "Reliability": "",
+          "Security": ""
+        },
+        "metrics": {
+          "string": ""
+        }
+      }
+    },
+    {
+      "operation": "get_analysis_list",
+      "title": "Get Analysis List",
+      "description": "Retrieves a list of analysis from Kuiwan.",
+      "category": "investigation",
+      "annotation": "get_analysis_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve analysis from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve analysis from Kiuwan."
+        },
+        {
+          "title": "Audit Status",
+          "description": "Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can choose either OK or FAIL.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "audit_status",
+          "tooltip": "Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can choose either OK or FAIL.",
+          "options": [
+            "OK",
+            "FAIL"
+          ]
+        },
+        {
+          "title": "Count",
+          "description": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "value": 500
+        },
+        {
+          "title": "Deliveries",
+          "description": "Select this option to run deliveries on the analysis results in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "deliveries",
+          "tooltip": "Select this option to run deliveries on the analysis results in Kiuwan."
+        },
+        {
+          "title": "Start Time",
+          "description": "Specify the starting DateTime from when you want to retrieve analysis from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "start_date",
+          "tooltip": "Specify the starting DateTime from when you want to retrieve analysis from Kiuwan."
+        },
+        {
+          "title": "End Time",
+          "description": "Specify the ending DateTime till when you want to retrieve analysis from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "end_date",
+          "tooltip": "Specify the ending DateTime till when you want to retrieve analysis from Kiuwan."
+        },
+        {
+          "title": "Page",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "value": 1
+        },
+        {
+          "title": "Status",
+          "description": "Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "status",
+          "tooltip": "Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
+          "options": [
+            "SUCCESS",
+            "FAIL",
+            "INPROGRESS"
+          ]
+        }
+      ],
+      "output_schema": [
+        {
+          "applicationName": "",
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": {
+            "country:": ""
+          },
+          "metrics": {
+          }
+        }
+      ]
+    },
+    {
+      "operation": "delete_analysis",
+      "title": "Delete Analysis",
+      "description": "Delete a specific analysis details from Kiuwan based on the analysis code that you have specified.",
+      "category": "investigation",
+      "annotation": "delete_analysis",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Analysis Code",
+          "description": "Specify the code of the analysis for which you want to delete a specific analysis in Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysis_code",
+          "tooltip": "Specify the code of the analysis for which you want to delete a specific analysis in Kiuwan."
+        }
+      ],
+      "output_schema": []
+    },
+    {
+      "operation": "create_mutes_for_rule_or_file",
+      "title": "Create Mutes for Rule or File",
+      "description": "Create a mutes for a rule/file in Kiuwan based on the application name and other parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "create_mutes_for_rule_or_file",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to create a mutes for rule/file in Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to create a mutes for rule/file in Kiuwan."
+        },
+        {
+          "title": "Comment",
+          "description": "Comment that you want to associate with the specified mute that you want to create in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "comment",
+          "tooltip": "Comment that you want to associate with the specified mute that you want to create in Kiuwan."
+        },
+        {
+          "title": "File Name",
+          "description": "Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "file_name",
+          "tooltip": "Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.."
+        },
+        {
+          "title": "File Pattern",
+          "description": "Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "file_pattern",
+          "tooltip": "Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan."
+        },
+        {
+          "title": "Rule",
+          "description": "Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "rule",
+          "tooltip": "Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
+          "placeholder": "e.g. OPT.JAVA.FMETODOS.NCE"
+        },
+        {
+          "title": "Mute Reason",
+          "description": "Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "reason",
+          "tooltip": "Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "options": [
+            "NONE",
+            "FALSE_POSITIVE",
+            "TOO_MANY_DEFECTS",
+            "GENERATED_CODE",
+            "TOO_COMPLEX_CODE",
+            "OTHER"
+          ]
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}
