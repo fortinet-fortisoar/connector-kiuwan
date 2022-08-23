@@ -9,16 +9,13 @@
   "category": "Utilities",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "ingestion_supported": true,
-  "ingestion_modes": [
-    "scheduled"
-  ],
+  "ingestion_supported": false,
   "help_online": "",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
-        "description": "Specify the URL of the Graylog server to which you will connect and perform automated operations.",
+        "description": "Specify the URL of the Kiuwan server to which you will connect and perform automated operations.",
         "type": "text",
         "name": "server_url",
         "required": true,
@@ -28,7 +25,7 @@
       },
       {
         "title": "Username",
-        "description": "Specify the Username used to access the Graylog server to which you will connect and perform the automated operations.",
+        "description": "Specify the Username used to access the Kiuwan server to which you will connect and perform the automated operations.",
         "type": "text",
         "name": "username",
         "required": true,
@@ -37,7 +34,7 @@
       },
       {
         "title": "Password",
-        "description": "Specify the Password used to access the Graylog server to which you will connect and perform the automated operations.",
+        "description": "Specify the Password used to access the Kiuwan server to which you will connect and perform the automated operations.",
         "type": "password",
         "name": "password",
         "required": true,
@@ -133,9 +130,494 @@
       }
     },
     {
+      "operation": "get_defects_list_for_action_plan",
+      "title": "Get Defects List for Action Plan",
+      "description": "Retrieves the list of all defects included in an action plan from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_defects_list_for_action_plan",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Action Plan Name",
+          "description": "Specify the name of the action plan for which you want to retrieve defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "action_name",
+          "tooltip": "Specify the name of the action plan for which you want to retrieve defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Creation Date",
+          "description": "Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "creation_date",
+          "tooltip": "Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "creation": "",
+        "expiration": "",
+        "createdBy": "",
+        "assignedTo": "",
+        "progress": "",
+        "estimate": "",
+        "pendingEffort": "",
+        "purged": "",
+        "allDefects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_pending_defects_for_action_plan",
+      "title": "Get Pending Defects for Action Plan",
+      "description": "Retrieves the pending defects of an action plan from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_pending_defects_for_action_plan",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve pending defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve pending defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Action Plan Name",
+          "description": "Specify the name of the action plan for which you want to retrieve pending defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "action_name",
+          "tooltip": "Specify the name of the action plan for which you want to retrieve pending defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Creation Date",
+          "description": "Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "creation_date",
+          "tooltip": "Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Analysis Label",
+          "description": "Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysisLabel",
+          "tooltip": "Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Sort By",
+          "description": "Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "sort_by",
+          "tooltip": "Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
+          "value": true
+        },
+        {
+          "title": "Characteristics",
+          "description": "Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "characteristics",
+          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "options": [
+            "Efficiency",
+            "Maintainability",
+            "Portability",
+            "Reliability",
+            "Security"
+          ]
+        },
+        {
+          "title": "File Contains",
+          "description": "Specify the name of the file for which you want to filter pending defects in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "fileContains",
+          "tooltip": "Specify the name of the file for which you want to filter pending defects in Kiuwan."
+        },
+        {
+          "title": "Languages",
+          "description": "Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "languages",
+          "tooltip": "Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan."
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the maximum number of results this operation should return, per page, in the response.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response."
+        },
+        {
+          "title": "Order By",
+          "description": "Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderBy",
+          "tooltip": "Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "options": [
+            "Priority",
+            "Effort"
+          ]
+        },
+        {
+          "title": "Priorities",
+          "description": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "priorities",
+          "tooltip": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "options": [
+            "Very low",
+            "Low",
+            "Normal",
+            "High",
+            "Very high"
+          ]
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "creation": "",
+        "expiration": "",
+        "createdBy": "",
+        "assignedTo": "",
+        "progress": "",
+        "estimate": "",
+        "pendingEffort": "",
+        "purged": "",
+        "pendingDefects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_removed_defects_for_action_plan",
+      "title": "Get Removed Defects for Action Plan",
+      "description": "Retrieves the removed defects of an action plan in Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_removed_defects_for_action_plan",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve removed defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve removed defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Action Plan Name",
+          "description": "Specify the name of the action plan for which you want to retrieve removed defects for action plan from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "action_name",
+          "tooltip": "Specify the name of the action plan for which you want to retrieve removed defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Creation Date",
+          "description": "Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "creation_date",
+          "tooltip": "Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan."
+        },
+        {
+          "title": "Analysis Label",
+          "description": "Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysisLabel",
+          "tooltip": "Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "creation": "",
+        "expiration": "",
+        "createdBy": "",
+        "assignedTo": "",
+        "progress": "",
+        "estimate": "",
+        "pendingEffort": "",
+        "purged": "",
+        "removedDefects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_available_action_plans",
+      "title": "Get Available Action Plans",
+      "description": "Retrieves the list of actions plans of an application from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_available_action_plans",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve action plans from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve action plans from Kiuwan."
+        }
+      ],
+      "output_schema": [
+        {
+          "name": "",
+          "description": "",
+          "creation": "",
+          "expiration": "",
+          "createdBy": "",
+          "assignedTo": "",
+          "progress": "",
+          "estimate": "",
+          "pendingEffort": "",
+          "purged": ""
+        }
+      ]
+    },
+    {
       "operation": "get_analysis_list",
       "title": "Get Analysis List",
-      "description": "Retrieves a list of analysis from Kuiwan.",
+      "description": "Retrieves a list of analysis from Kiuwan.",
       "category": "investigation",
       "annotation": "get_analysis_list",
       "enabled": true,
@@ -165,7 +647,7 @@
           ]
         },
         {
-          "title": "Count",
+          "title": "Limit",
           "description": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
           "required": false,
           "editable": true,
@@ -266,6 +748,1624 @@
       ]
     },
     {
+      "operation": "get_analysis_codes_list",
+      "title": "Get Analysis Codes List",
+      "description": "Retrieves the list of analysis codes for an application from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_analysis_codes_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve analysis codes from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve analysis codes from Kiuwan."
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "count",
+          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500."
+        },
+        {
+          "title": "Purged Analyses",
+          "description": "Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "filterPurgedAnalyses",
+          "tooltip": "Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True",
+          "value": true
+        },
+        {
+          "title": "Success",
+          "description": "Select the option based on which you want to retrieved succeeded analysis code from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "success",
+          "tooltip": "Select the option based on which you want to retrieved succeeded analysis code from Kiuwan."
+        }
+      ],
+      "output_schema": [
+        {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": {
+            "country": ""
+          },
+          "metrics": {
+            "com.optimyth.CQM.defectsByPriority.Priority 1": "",
+            "com.optimyth.CQM.defectsByPriority.Priority 2": "",
+            "com.optimyth.CQM.defectsByPriority.Priority 3": "",
+            "com.optimyth.CQM.defectsByPriority.Priority 4": "",
+            "com.optimyth.CQM.defectsByPriority.Priority 5": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_latest_analysis_files_list",
+      "title": "Get Latest Analysis Files List",
+      "description": "Retrieves a list of files with metric values and defects of the latest analysis for the named application from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_latest_analysis_files_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve latest analysis files from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve latest analysis files from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "auditName": "",
+        "applicationBusinessValue": "",
+        "applicationProvider": "",
+        "applicationPortfolios": "",
+        "creationDate": "",
+        "label": "",
+        "date": "",
+        "modelId": "",
+        "encoding": "",
+        "analysisCode": "",
+        "analysisURL": "",
+        "auditResultURL": "",
+        "analysisBusinessValue": "",
+        "analysisProvider": "",
+        "analysisPortfolios": "",
+        "analysisStatus": "",
+        "languages": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "architecture": {
+          "languages": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "types": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "relations": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "tags": "",
+          "groupTags": ""
+        },
+        "insightsData": {
+          "components": "",
+          "vulnerabilities": "",
+          "licenses": "",
+          "duplicates": "",
+          "risks": [
+            {
+              "name": "",
+              "risk": {
+                "string": ""
+              }
+            }
+          ]
+        },
+        "unparsedFiles": [
+          {
+            "file": "",
+            "cause": ""
+          }
+        ],
+        "files_count": "",
+        "count": "",
+        "page": "",
+        "files": [
+          {
+            "name": "",
+            "metrics_count": "",
+            "metrics": [
+              {
+                "name": "",
+                "value": "",
+                "size": "",
+                "minRange": "",
+                "maxRange": "",
+                "index": "",
+                "color": ""
+              }
+            ],
+            "defects_count": "",
+            "defects": [
+              {
+                "defectId": "",
+                "file": "",
+                "line": "",
+                "code": "",
+                "muted": "",
+                "vulnerabilityType": "",
+                "explanation": "",
+                "status": "",
+                "cweId": "",
+                "ruleCode": "",
+                "rule": "",
+                "language": "",
+                "characteristic": "",
+                "priority": "",
+                "effort": "",
+                "modelId": "",
+                "securityDetail": {
+                  "cweId": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": "",
+                  "sourceFile": "",
+                  "sourceLine": "",
+                  "sourceCode": "",
+                  "sourceCategory": "",
+                  "sourceResource": "",
+                  "sourceContainer": "",
+                  "sourceInjectionPoint": "",
+                  "frames": [
+                    {
+                      "index": "",
+                      "file": "",
+                      "lineNumber": "",
+                      "lineText": "",
+                      "category": "",
+                      "resource": "",
+                      "container": "",
+                      "injectionPoint": "",
+                      "variableDeclaration": ""
+                    }
+                  ],
+                  "datapaths": [
+                    {
+                      "index": "",
+                      "kind": "",
+                      "varname": "",
+                      "lineNumber": "",
+                      "lineText": "",
+                      "indirect": "",
+                      "file": "",
+                      "container": "",
+                      "localId": "",
+                      "localParentId": ""
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "lastSuccessfulDelivery": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "lastSuccessfulBaseline": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "quality_model": "",
+        "ordered_by": "",
+        "Risk index": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Quality indicator": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Effort to target": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Main metrics": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "Security": ""
+      }
+    },
+    {
+      "operation": "get_last_analysis",
+      "title": "Get Latest Analysis",
+      "description": "Retrieves a last analysis for the authenticated user and the application indicated from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_last_analysis",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve latest analysis from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve latest analysis from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "auditName": "",
+        "applicationBusinessValue": "",
+        "applicationProvider": "",
+        "applicationPortfolios": "",
+        "creationDate": "",
+        "label": "",
+        "date": "",
+        "modelId": "",
+        "encoding": "",
+        "analysisCode": "",
+        "analysisURL": "",
+        "auditResultURL": "",
+        "analysisBusinessValue": "",
+        "analysisProvider": "",
+        "analysisPortfolios": "",
+        "analysisStatus": "",
+        "languages": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "architecture": {
+          "languages": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "types": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "relations": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "tags": "",
+          "groupTags": ""
+        },
+        "insightsData": {
+          "components": "",
+          "vulnerabilities": "",
+          "licenses": "",
+          "duplicates": "",
+          "risks": [
+            {
+              "name": "",
+              "risk": {
+                "string": ""
+              }
+            }
+          ]
+        },
+        "unparsedFiles": [
+          {
+            "file": "",
+            "cause": ""
+          }
+        ],
+        "lastSuccessfulDelivery": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "lastSuccessfulBaseline": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "quality_model": "",
+        "ordered_by": "",
+        "Risk index": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Quality indicator": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Effort to target": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Main metrics": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "Security": ""
+      }
+    },
+    {
+      "operation": "get_application_analysis",
+      "title": "Get Application Analysis",
+      "description": "Retrieves a analysis results for a concrete analysis specified by code parameter from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_application_analysis",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve application analysis from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve application analysis from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "auditName": "",
+        "applicationBusinessValue": "",
+        "applicationProvider": "",
+        "applicationPortfolios": "",
+        "creationDate": "",
+        "label": "",
+        "date": "",
+        "modelId": "",
+        "encoding": "",
+        "analysisCode": "",
+        "analysisURL": "",
+        "auditResultURL": "",
+        "analysisBusinessValue": "",
+        "analysisProvider": "",
+        "analysisPortfolios": "",
+        "analysisStatus": "",
+        "languages": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "architecture": {
+          "languages": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "types": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "relations": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "tags": "",
+          "groupTags": ""
+        },
+        "insightsData": {
+          "components": "",
+          "vulnerabilities": "",
+          "licenses": "",
+          "duplicates": "",
+          "risks": [
+            {
+              "name": "",
+              "risk": {
+                "string": ""
+              }
+            }
+          ]
+        },
+        "unparsedFiles": [
+          {
+            "file": "",
+            "cause": ""
+          }
+        ],
+        "analysisScope": "",
+        "changeRequest": "",
+        "changeRequestStatus": "",
+        "branchName": "",
+        "baselineAnalysisCode": "",
+        "deliveryFiles": {
+          "count": ""
+        },
+        "deliveryDefects": {
+          "newDefects": "",
+          "removedDefects": "",
+          "defects": ""
+        },
+        "auditResult": {
+          "auditName": "",
+          "description": "",
+          "approvalThreshold": "",
+          "overallResult": "",
+          "score": "",
+          "checkpointResults": [
+            {
+              "checkpoint": "",
+              "result": "",
+              "name": "",
+              "description": "",
+              "weight": "",
+              "mandatory": "",
+              "type": "",
+              "score": "",
+              "violatedRules": [
+                {
+                  "ruleCode": "",
+                  "modelId": "",
+                  "defectsCount": "",
+                  "suppressedDefectsCount": "",
+                  "filesCount": "",
+                  "effort": "",
+                  "characteristic": "",
+                  "vulnerabilityType": "",
+                  "tags": "",
+                  "priority": "",
+                  "language": "",
+                  "files": {
+                    "href": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "lastSuccessfulDelivery": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "lastSuccessfulBaseline": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "quality_model": "",
+        "ordered_by": "",
+        "Risk index": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Quality indicator": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Effort to target": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Main metrics": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "Security": ""
+      }
+    },
+    {
+      "operation": "get_analysis_defects_list",
+      "title": "Get Analysis Defects List",
+      "description": "Retrieves a list of all analysis defects for a concrete analysis from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_analysis_defects_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code for which you want to retrieve analysis defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "code",
+          "tooltip": "Specify the analysis code for which you want to retrieve analysis defects from Kiuwan."
+        },
+        {
+          "title": "Sort By",
+          "description": "Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "sort_by",
+          "tooltip": "Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
+          "value": false
+        },
+        {
+          "title": "Characteristics",
+          "description": "Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "characteristics",
+          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "options": [
+            "Efficiency",
+            "Maintainability",
+            "Portability",
+            "Reliability",
+            "Security"
+          ]
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the maximum number of results this operation should return, per page, in the response. By Default, is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response.By Default, is set to 500.",
+          "value": 500
+        },
+        {
+          "title": "File Contains",
+          "description": "Specify the name of the file for which you want to filter analysis defects in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "fileContains",
+          "tooltip": "Specify the name of the file for which you want to filter analysis defects in Kiuwan."
+        },
+        {
+          "title": "Languages",
+          "description": "Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "languages",
+          "tooltip": "Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan."
+        },
+        {
+          "title": "Mutes",
+          "description": "Select the mutes based on which you want to filter defects by their mute status in Kiuwan",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "muted",
+          "tooltip": "Select the mutes based on which you want to filter defects by their mute status in Kiuwan"
+        },
+        {
+          "title": "Order By",
+          "description": "Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderBy",
+          "tooltip": "Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "options": [
+            "Priority",
+            "Effort"
+          ]
+        },
+        {
+          "title": "Page",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "value": 1
+        },
+        {
+          "title": "Priorities",
+          "description": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "priorities",
+          "tooltip": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "options": [
+            "Very low",
+            "Low",
+            "Normal",
+            "High",
+            "Very high"
+          ]
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "auditName": "",
+        "applicationBusinessValue": "",
+        "applicationProvider": "",
+        "applicationPortfolios": "",
+        "creationDate": "",
+        "label": "",
+        "date": "",
+        "modelId": "",
+        "encoding": "",
+        "analysisCode": "",
+        "analysisURL": "",
+        "auditResultURL": "",
+        "analysisBusinessValue": "",
+        "analysisProvider": "",
+        "analysisPortfolios": "",
+        "analysisStatus": "",
+        "languages": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "architecture": {
+          "languages": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "types": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "relations": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "tags": "",
+          "groupTags": ""
+        },
+        "insightsData": {
+          "components": "",
+          "vulnerabilities": "",
+          "licenses": "",
+          "duplicates": "",
+          "risks": [
+            {
+              "name": "",
+              "risk": {
+                "string": ""
+              }
+            }
+          ]
+        },
+        "unparsedFiles": [
+          {
+            "file": "",
+            "cause": ""
+          }
+        ],
+        "defects_count": "",
+        "activeDefects_count": "",
+        "supressedDefects_count": "",
+        "count": "",
+        "page": "",
+        "defects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ],
+        "lastSuccessfulDelivery": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "lastSuccessfulBaseline": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": "",
+          "metrics": ""
+        },
+        "quality_model": "",
+        "ordered_by": "",
+        "Risk index": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Quality indicator": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Effort to target": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Main metrics": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "Security": ""
+      }
+    },
+    {
+      "operation": "get_comparison_defects",
+      "title": "Get Comparison Defects",
+      "description": "Retrieves a net number of new and removed defects and violated rules after comparing 2 given analyses from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_comparison_defects",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code based on which you want to retrieve comparison defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "code",
+          "tooltip": "Specify the analysis code based on which you want to retrieve comparison defects from Kiuwan."
+        },
+        {
+          "title": "Previous Analysis Code",
+          "description": "Specify the previous analysis code based on which you want to retrieve comparison defects from Kiuwan",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "prev_code",
+          "tooltip": "Specify the previous analysis code based on which you want to retrieve comparison defects from Kiuwan"
+        }
+      ],
+      "output_schema": {
+        "Main analysis code": "",
+        "Previous analysis code": "",
+        "New violated rules count": "",
+        "Removed violated rules count": "",
+        "New defects count": "",
+        "Removed defects count": ""
+      }
+    },
+    {
+      "operation": "get_new_removed_defects_list",
+      "title": "Get New/Removed Defects List",
+      "description": "Retrieves a list of new/removed defects in an analysis from the previous analysis from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_new_removed_defects_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code based on which you want to retrieve comparison defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "code",
+          "tooltip": "Specify the analysis code based on which you want to retrieve comparison defects from Kiuwan."
+        },
+        {
+          "title": "Previous Analysis Code",
+          "description": "Specify the previous analysis code based on which you want to retrieve comparison defects from Kiuwan",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "prev_code",
+          "tooltip": "Specify the previous analysis code based on which you want to retrieve comparison defects from Kiuwan"
+        },
+        {
+          "title": "Defect Type",
+          "description": "Specify the type of the defect based on which you want to retrieve comparison defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "defectstype",
+          "tooltip": "Specify the type of the defect based on which you want to retrieve comparison defects from Kiuwan.",
+          "options": [
+            "New",
+            "Removed"
+          ]
+        }
+      ],
+      "output_schema": {
+        "count": "",
+        "page": "",
+        "Main analysis code": "",
+        "Previous analysis code": "",
+        "New violated rules count": "",
+        "Removed violated rules count": "",
+        "New defects count": "",
+        "Removed defects count": "",
+        "New defects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Removed defects": [
+          {
+            "defectId": "",
+            "file": "",
+            "line": "",
+            "code": "",
+            "muted": "",
+            "vulnerabilityType": "",
+            "explanation": "",
+            "status": "",
+            "cweId": "",
+            "ruleCode": "",
+            "rule": "",
+            "language": "",
+            "characteristic": "",
+            "priority": "",
+            "effort": "",
+            "modelId": "",
+            "securityDetail": {
+              "cweId": "",
+              "category": "",
+              "resource": "",
+              "container": "",
+              "injectionPoint": "",
+              "variableDeclaration": "",
+              "sourceFile": "",
+              "sourceLine": "",
+              "sourceCode": "",
+              "sourceCategory": "",
+              "sourceResource": "",
+              "sourceContainer": "",
+              "sourceInjectionPoint": "",
+              "frames": [
+                {
+                  "index": "",
+                  "file": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": ""
+                }
+              ],
+              "datapaths": [
+                {
+                  "index": "",
+                  "kind": "",
+                  "varname": "",
+                  "lineNumber": "",
+                  "lineText": "",
+                  "indirect": "",
+                  "file": "",
+                  "container": "",
+                  "localId": "",
+                  "localParentId": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_files_defects_details",
+      "title": "Get Files Defects Details",
+      "description": "Retrieves a files with metric values and defects for a specific analysis from kiuwan.",
+      "category": "investigation",
+      "annotation": "get_files_defects_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Analysis Code",
+          "description": "Specify the code of the analysis for which you want to retrieve files defects details from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "code",
+          "tooltip": "Specify the code of the analysis for which you want to retrieve files defects details from Kiuwan."
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "description": "",
+        "auditName": "",
+        "applicationBusinessValue": "",
+        "applicationProvider": "",
+        "applicationPortfolios": "",
+        "creationDate": "",
+        "label": "",
+        "date": "",
+        "modelId": "",
+        "encoding": "",
+        "analysisCode": "",
+        "analysisURL": "",
+        "auditResultURL": "",
+        "analysisBusinessValue": "",
+        "analysisProvider": "",
+        "analysisPortfolios": "",
+        "analysisStatus": "",
+        "languages": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "architecture": {
+          "languages": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "types": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "relations": [
+            {
+              "value": "",
+              "count": ""
+            }
+          ],
+          "tags": "",
+          "groupTags": ""
+        },
+        "insightsData": {
+          "components": "",
+          "vulnerabilities": "",
+          "licenses": "",
+          "duplicates": "",
+          "risks": [
+            {
+              "name": "",
+              "risk": {
+                "string": ""
+              }
+            }
+          ]
+        },
+        "unparsedFiles": [
+          {
+            "file": "",
+            "cause": ""
+          }
+        ],
+        "files_count": "",
+        "count": "",
+        "page": "",
+        "files": [
+          {
+            "name": "",
+            "metrics_count": "",
+            "metrics": [
+              {
+                "name": "",
+                "value": "",
+                "size": "",
+                "minRange": "",
+                "maxRange": "",
+                "index": "",
+                "color": ""
+              }
+            ],
+            "defects_count": "",
+            "defects": [
+              {
+                "defectId": "",
+                "file": "",
+                "line": "",
+                "code": "",
+                "muted": "",
+                "vulnerabilityType": "",
+                "explanation": "",
+                "status": "",
+                "cweId": "",
+                "ruleCode": "",
+                "rule": "",
+                "language": "",
+                "characteristic": "",
+                "priority": "",
+                "effort": "",
+                "modelId": "",
+                "securityDetail": {
+                  "cweId": "",
+                  "category": "",
+                  "resource": "",
+                  "container": "",
+                  "injectionPoint": "",
+                  "variableDeclaration": "",
+                  "sourceFile": "",
+                  "sourceLine": "",
+                  "sourceCode": "",
+                  "sourceCategory": "",
+                  "sourceResource": "",
+                  "sourceContainer": "",
+                  "sourceInjectionPoint": "",
+                  "frames": [
+                    {
+                      "index": "",
+                      "file": "",
+                      "lineNumber": "",
+                      "lineText": "",
+                      "category": "",
+                      "resource": "",
+                      "container": "",
+                      "injectionPoint": "",
+                      "variableDeclaration": ""
+                    }
+                  ],
+                  "datapaths": [
+                    {
+                      "index": "",
+                      "kind": "",
+                      "varname": "",
+                      "lineNumber": "",
+                      "lineText": "",
+                      "indirect": "",
+                      "file": "",
+                      "container": "",
+                      "localId": "",
+                      "localParentId": ""
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "lastSuccessfulDelivery": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "lastSuccessfulBaseline": {
+          "code": "",
+          "label": "",
+          "creationDate": "",
+          "qualityModel": "",
+          "modelId": "",
+          "encoding": "",
+          "invoker": "",
+          "status": "",
+          "errorCode": "",
+          "unparsedFiles": [
+            {
+              "file": "",
+              "cause": ""
+            }
+          ],
+          "analysisScope": "",
+          "changeRequest": "",
+          "changeRequestStatus": "",
+          "branchName": "",
+          "auditResult": "",
+          "analysisBusinessValue": "",
+          "analysisProvider": "",
+          "analysisPortfolios": ""
+        },
+        "quality_model": "",
+        "ordered_by": "",
+        "Risk index": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Quality indicator": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Effort to target": {
+          "name": "",
+          "value": "",
+          "size": "",
+          "minRange": "",
+          "maxRange": "",
+          "index": "",
+          "color": ""
+        },
+        "Main metrics": [
+          {
+            "name": "",
+            "value": "",
+            "size": "",
+            "minRange": "",
+            "maxRange": "",
+            "index": "",
+            "color": ""
+          }
+        ],
+        "Security": ""
+      }
+    },
+    {
       "operation": "delete_analysis",
       "title": "Delete Analysis",
       "description": "Delete a specific analysis details from Kiuwan based on the analysis code that you have specified.",
@@ -362,6 +2462,389 @@
             "TOO_COMPLEX_CODE",
             "OTHER"
           ]
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "create_suppresion_rule",
+      "title": "Create Suppresion Rule",
+      "description": "Create a suppresion rule in Kiuwan based on the defect ID and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "create_suppresion_rule",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Defect ID",
+          "description": "Specify the ID of the defect for which you want to create a suppresion rule in Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "defect_id",
+          "tooltip": "Specify the ID of the defect for which you want to create a suppresion rule in Kiuwan."
+        },
+        {
+          "title": "Comment",
+          "description": "Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "comment",
+          "tooltip": "Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan."
+        },
+        {
+          "title": "Mute By",
+          "description": "Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "muteBy",
+          "tooltip": "Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
+          "options": [
+            "LINE_NUMBER",
+            "SOURCE_CODE"
+          ],
+          "value": "LINE_NUMBER"
+        },
+        {
+          "title": "Mute Reason",
+          "description": "Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "reason",
+          "tooltip": "Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "options": [
+            "NONE",
+            "FALSE_POSITIVE",
+            "TOO_MANY_DEFECTS",
+            "GENERATED_CODE",
+            "TOO_COMPLEX_CODE",
+            "OTHER"
+          ]
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_defect_notes",
+      "title": "Get Defect Notes",
+      "description": "Retrieve a list of notes associated to this defect from kiuwan.",
+      "category": "investigation",
+      "annotation": "get_defect_notes",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Defect ID",
+          "description": "Specify the ID of the defect for which you want to retrieve defect notes from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "defect_id",
+          "tooltip": "Specify the ID of the defect for which you want to retrieve defect notes from Kiuwan."
+        }
+      ],
+      "output_schema": [
+        {
+          "date": "",
+          "user": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "operation": "get_violated_rules",
+      "title": "Get Violated Rules",
+      "description": "Retrieves a list of violated rules of an analysis for the authenticated user from Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_violated_rules",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve violated rules from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve violated rules from Kiuwan."
+        },
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code for which you want to retrieve violated rules from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysisCode",
+          "tooltip": "Specify the analysis code for which you want to retrieve violated rules from Kiuwan."
+        },
+        {
+          "title": "Code Security",
+          "description": "Select this option based on which you want to retrieve violated rules from Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "onlyCodeSecurity",
+          "tooltip": "Select this option based on which you want to retrieve violated rules from Kiuwan."
+        },
+        {
+          "title": "Characteristics",
+          "description": "Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "characteristics",
+          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "options": [
+            "Efficiency",
+            "Maintainability",
+            "Portability",
+            "Reliability",
+            "Security"
+          ]
+        },
+        {
+          "title": "Languages",
+          "description": "Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "languages",
+          "tooltip": "Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan."
+        },
+        {
+          "title": "Priority",
+          "description": "Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "priority",
+          "tooltip": "Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "options": [
+            "Very low",
+            "Low",
+            "Normal",
+            "High",
+            "Very high"
+          ]
+        },
+        {
+          "title": "Tag",
+          "description": "Specify a tag for which you want to filter violated rules in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "tag",
+          "tooltip": "Specify a tag for which you want to filter violated rules in Kiuwan."
+        },
+        {
+          "title": "Vulnerability Type",
+          "description": "Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "vuln_type",
+          "tooltip": "Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
+          "options": [
+            "Permissions",
+            "Privileges and Access Controls",
+            "Injection",
+            "Error Handling and Fault Isolation",
+            "Other",
+            "Encryption and Randomness",
+            "Misconfiguration",
+            "Design Error",
+            "Initialization and Shutdown",
+            "Control Flow Management",
+            "File Handling",
+            "Number Handling",
+            "System Element Isolation",
+            "Buffer Handling",
+            "Information Leaks",
+            "Pointer and Reference Handling"
+          ]
+        }
+      ],
+      "output_schema": [
+        {
+          "ruleCode": "",
+          "modelId": "",
+          "defectsCount": "",
+          "suppressedDefectsCount": "",
+          "filesCount": "",
+          "effort": "",
+          "characteristic": "",
+          "vulnerabilityType": "",
+          "tags": "",
+          "priority": "",
+          "language": "",
+          "files": {
+            "href": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_violated_rule_files",
+      "title": "Get Violated Rule Files",
+      "description": "Retrieves a list of files where the violated rule affects in Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_violated_rule_files",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve violated rule files from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve violated rule files from Kiuwan."
+        },
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code for which you want to retrieve violated rule files from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysisCode",
+          "tooltip": "Specify the analysis code for which you want to retrieve violated rule files from Kiuwan."
+        },
+        {
+          "title": "Rule Code",
+          "description": "Specify the rule code for which you want to retrieve violated rule files from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ruleCode",
+          "tooltip": "Specify the rule code for which you want to retrieve violated rule files from Kiuwan."
+        }
+      ],
+      "output_schema": [
+        {
+          "file": "",
+          "defectsCount": "",
+          "defects": {
+            "href": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_file_defects",
+      "title": "Get File Defects",
+      "description": "Retrieves a list of defects in a file for a concrete violated rule in Kiuwan.",
+      "category": "investigation",
+      "annotation": "get_file_defects",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application for which you want to retrieve file defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "app_name",
+          "tooltip": "Specify the name of the application for which you want to retrieve file defects from Kiuwan."
+        },
+        {
+          "title": "Analysis Code",
+          "description": "Specify the analysis code for which you want to retrieve file defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "analysisCode",
+          "tooltip": "Specify the analysis code for which you want to retrieve file defects from Kiuwan."
+        },
+        {
+          "title": "File Name",
+          "description": "Specify the name of the file including path for which you want to retrieve file defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "file_name",
+          "tooltip": "Specify the name of the file including path for which you want to retrieve file defects from Kiuwan."
+        },
+        {
+          "title": "Rule Code",
+          "description": "Specify the rule code for which you want to retrieve file defects from Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ruleCode",
+          "tooltip": "Specify the rule code for which you want to retrieve file defects from Kiuwan."
+        }
+      ],
+      "output_schema": [
+        {
+          "code": "",
+          "line": "",
+          "muted": ""
+        }
+      ]
+    },
+    {
+      "operation": "update_defect_status",
+      "title": "Update Defect Status",
+      "description": "Update status of this defect and add a note in Kiuwan.",
+      "category": "investigation",
+      "annotation": "update_defect_status",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Defect ID",
+          "description": "Specify the ID of the defect for which you want to update a defect status in Kiuwan.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "defect_id",
+          "tooltip": "Specify the ID of the defect for which you want to update a defect status in Kiuwan."
+        },
+        {
+          "title": "Status",
+          "description": "Specify the status for which you want to update a defect in Kiuwan. You can choose from the following options: NONE, TO_REVIEW, or REVIEWED.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "status",
+          "tooltip": "Specify the status for which you want to update a defect in Kiuwan. You can choose from the following options: NONE, TO_REVIEW, or REVIEWED.",
+          "options": [
+            "NONE",
+            "TO_REVIEW",
+            "REVIEWED"
+          ]
+        },
+        {
+          "title": "Note",
+          "description": "Add note that you want to associate with the specified defect that you want to update in Kiuwan.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "note",
+          "tooltip": "Add note that you want to associate with the specified defect that you want to update in Kiuwan."
         }
       ],
       "output_schema": {}
