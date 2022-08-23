@@ -2,11 +2,11 @@
   "name": "kiuwan",
   "label": "Kiuwan",
   "version": "1.0.0",
-  "description": "",
+  "description": "Kiuwan is a software as a service (SaaS) static application security testing multi-technology software for software analysis, code quality, software composition and security measurement/management. This connector facilitates automated operations related to Action Plan, Analyses, and Defect.",
   "publisher": "Community",
   "cs_approved": false,
   "cs_compatible": true,
-  "category": "Utilities",
+  "category": "DevOps and Digital Operations",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
@@ -84,13 +84,13 @@
         },
         {
           "title": "Creation Date",
-          "description": "Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan.",
+          "description": "(Optional) Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "creation_date",
-          "tooltip": "Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the creation date based on which you want to retrieve progress summary for action plan from Kiuwan."
         }
       ],
       "output_schema": {
@@ -159,13 +159,13 @@
         },
         {
           "title": "Creation Date",
-          "description": "Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan.",
+          "description": "(Optional) Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "creation_date",
-          "tooltip": "Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the creation date based on which you want to retrieve defects for action plan from Kiuwan."
         }
       ],
       "output_schema": {
@@ -273,91 +273,84 @@
         },
         {
           "title": "Creation Date",
-          "description": "Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan.",
+          "description": "(Optional) Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "creation_date",
-          "tooltip": "Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the creation date based on which you want to retrieve pending defects for action plan from Kiuwan."
         },
         {
           "title": "Analysis Label",
-          "description": "Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan.",
+          "description": "(Optional) Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "analysisLabel",
-          "tooltip": "Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan."
         },
         {
           "title": "Sort By",
-          "description": "Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
+          "description": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "sort_by",
-          "tooltip": "Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
+          "tooltip": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
           "value": true
         },
         {
           "title": "Characteristics",
-          "description": "Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "multiselect",
+          "type": "text",
           "name": "characteristics",
-          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
-          "options": [
-            "Efficiency",
-            "Maintainability",
-            "Portability",
-            "Reliability",
-            "Security"
-          ]
+          "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security."
         },
         {
           "title": "File Contains",
-          "description": "Specify the name of the file for which you want to filter pending defects in Kiuwan.",
+          "description": "(Optional) Specify the name of the file for which you want to filter pending defects in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "fileContains",
-          "tooltip": "Specify the name of the file for which you want to filter pending defects in Kiuwan."
+          "tooltip": "(Optional) Specify the name of the file for which you want to filter pending defects in Kiuwan."
         },
         {
           "title": "Languages",
-          "description": "Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan.",
+          "description": "(Optional) Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "languages",
-          "tooltip": "Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan."
+          "tooltip": "(Optional) Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan."
         },
         {
           "title": "Limit",
-          "description": "Specify the maximum number of results this operation should return, per page, in the response.",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "limit",
-          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response."
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response."
         },
         {
           "title": "Order By",
-          "description": "Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "description": "(Optional) Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can either choose Priority or Effort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "orderBy",
-          "tooltip": "Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "tooltip": "(Optional) Select the option based on which you want to filter the pending defects retrieved from Kiuwan. You can either choose Priority or Effort.",
           "options": [
             "Priority",
             "Effort"
@@ -365,20 +358,13 @@
         },
         {
           "title": "Priorities",
-          "description": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "select",
+          "type": "text",
           "name": "priorities",
-          "tooltip": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
-          "options": [
-            "Very low",
-            "Low",
-            "Normal",
-            "High",
-            "Very high"
-          ]
+          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
         }
       ],
       "output_schema": {
@@ -486,23 +472,23 @@
         },
         {
           "title": "Creation Date",
-          "description": "Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan.",
+          "description": "(Optional) Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "creation_date",
-          "tooltip": "Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the creation date based on which you want to retrieve removed defects for action plan from Kiuwan."
         },
         {
           "title": "Analysis Label",
-          "description": "Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan.",
+          "description": "(Optional) Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan. Note: If not provided, it compares with last analysis.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "analysisLabel",
-          "tooltip": "Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan."
+          "tooltip": "(Optional) Specify the analysis label for which you want to retrieve removed defects for action plan from Kiuwan. Note: If not provided, it compares with last analysis."
         }
       ],
       "output_schema": {
@@ -624,23 +610,23 @@
       "parameters": [
         {
           "title": "Application Name",
-          "description": "Specify the name of the application for which you want to retrieve analysis from Kiuwan.",
+          "description": "(Optional) Specify the name of the application for which you want to retrieve analysis from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "app_name",
-          "tooltip": "Specify the name of the application for which you want to retrieve analysis from Kiuwan."
+          "tooltip": "(Optional) Specify the name of the application for which you want to retrieve analysis from Kiuwan."
         },
         {
           "title": "Audit Status",
-          "description": "Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can choose either OK or FAIL.",
+          "description": "(Optional) Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can either choose OK or FAIL. Note: It only apply to analysis that has audits.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "audit_status",
-          "tooltip": "Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can choose either OK or FAIL.",
+          "tooltip": "(Optional) Select the status of audit based on which you want to filter the analysis retrieved from Kiuwan. You can either choose OK or FAIL. Note: It only apply to analysis that has audits.",
           "options": [
             "OK",
             "FAIL"
@@ -648,65 +634,65 @@
         },
         {
           "title": "Limit",
-          "description": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "count",
-          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
           "value": 500
         },
         {
           "title": "Deliveries",
-          "description": "Select this option to run deliveries on the analysis results in Kiuwan.",
+          "description": "(Optional) Select this option to run deliveries on the analysis results in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "deliveries",
-          "tooltip": "Select this option to run deliveries on the analysis results in Kiuwan."
+          "tooltip": "(Optional) Select this option to run deliveries on the analysis results in Kiuwan."
         },
         {
           "title": "Start Time",
-          "description": "Specify the starting DateTime from when you want to retrieve analysis from Kiuwan.",
+          "description": "(Optional) Specify the starting DateTime from when you want to retrieve analysis from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "start_date",
-          "tooltip": "Specify the starting DateTime from when you want to retrieve analysis from Kiuwan."
+          "tooltip": "(Optional) Specify the starting DateTime from when you want to retrieve analysis from Kiuwan."
         },
         {
           "title": "End Time",
-          "description": "Specify the ending DateTime till when you want to retrieve analysis from Kiuwan.",
+          "description": "(Optional) Specify the ending DateTime till when you want to retrieve analysis from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "end_date",
-          "tooltip": "Specify the ending DateTime till when you want to retrieve analysis from Kiuwan."
+          "tooltip": "(Optional) Specify the ending DateTime till when you want to retrieve analysis from Kiuwan."
         },
         {
           "title": "Page",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "page",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
           "value": 1
         },
         {
           "title": "Status",
-          "description": "Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
+          "description": "(Optional) Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "status",
-          "tooltip": "Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
+          "tooltip": "(Optional) Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
           "options": [
             "SUCCESS",
             "FAIL",
@@ -767,34 +753,34 @@
         },
         {
           "title": "Limit",
-          "description": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "text",
+          "type": "integer",
           "name": "count",
-          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500."
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500."
         },
         {
           "title": "Purged Analyses",
-          "description": "Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True.",
+          "description": "(Optional) Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "filterPurgedAnalyses",
-          "tooltip": "Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True",
+          "tooltip": "(Optional) Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True",
           "value": true
         },
         {
           "title": "Success",
-          "description": "Select the option based on which you want to retrieved succeeded analysis code from Kiuwan.",
+          "description": "(Optional) Select the option based on which you want to retrieved succeeded analysis code from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "text",
+          "type": "checkbox",
           "name": "success",
-          "tooltip": "Select the option based on which you want to retrieved succeeded analysis code from Kiuwan."
+          "tooltip": "(Optional) Select the option based on which you want to retrieved succeeded analysis code from Kiuwan."
         }
       ],
       "output_schema": [
@@ -1539,82 +1525,75 @@
         },
         {
           "title": "Sort By",
-          "description": "Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
+          "description": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "sort_by",
-          "tooltip": "Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
+          "tooltip": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
           "value": false
         },
         {
           "title": "Characteristics",
-          "description": "Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "multiselect",
+          "type": "text",
           "name": "characteristics",
-          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
-          "options": [
-            "Efficiency",
-            "Maintainability",
-            "Portability",
-            "Reliability",
-            "Security"
-          ]
+          "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security."
         },
         {
           "title": "Limit",
-          "description": "Specify the maximum number of results this operation should return, per page, in the response. By Default, is set to 500.",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By Default, is set to 500.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "count",
-          "tooltip": "Specify the maximum number of results this operation should return, per page, in the response.By Default, is set to 500.",
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response.By Default, is set to 500.",
           "value": 500
         },
         {
           "title": "File Contains",
-          "description": "Specify the name of the file for which you want to filter analysis defects in Kiuwan.",
+          "description": "(Optional) Specify the name of the file for which you want to filter analysis defects in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "fileContains",
-          "tooltip": "Specify the name of the file for which you want to filter analysis defects in Kiuwan."
+          "tooltip": "(Optional) Specify the name of the file for which you want to filter analysis defects in Kiuwan."
         },
         {
           "title": "Languages",
-          "description": "Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan.",
+          "description": "(Optional) Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "languages",
-          "tooltip": "Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan."
+          "tooltip": "(Optional) Specify a Comma-separated list of languages for which you want to filter analysis defects in Kiuwan."
         },
         {
           "title": "Mutes",
-          "description": "Select the mutes based on which you want to filter defects by their mute status in Kiuwan",
+          "description": "(Optional) Select the mutes based on which you want to filter defects by their mute status in Kiuwan",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "muted",
-          "tooltip": "Select the mutes based on which you want to filter defects by their mute status in Kiuwan"
+          "tooltip": "(Optional) Select the mutes based on which you want to filter defects by their mute status in Kiuwan"
         },
         {
           "title": "Order By",
-          "description": "Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "description": "(Optional) Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "orderBy",
-          "tooltip": "Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "tooltip": "(Optional) Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
           "options": [
             "Priority",
             "Effort"
@@ -1622,31 +1601,24 @@
         },
         {
           "title": "Page",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "page",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
           "value": 1
         },
         {
           "title": "Priorities",
-          "description": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "priorities",
-          "tooltip": "Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
-          "options": [
-            "Very low",
-            "Low",
-            "Normal",
-            "High",
-            "Very high"
-          ]
+          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
         }
       ],
       "output_schema": {
@@ -2406,54 +2378,54 @@
         },
         {
           "title": "Comment",
-          "description": "Comment that you want to associate with the specified mute that you want to create in Kiuwan.",
+          "description": "(Optional) Comment that you want to associate with the specified mute that you want to create in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "comment",
-          "tooltip": "Comment that you want to associate with the specified mute that you want to create in Kiuwan."
+          "tooltip": "(Optional) Comment that you want to associate with the specified mute that you want to create in Kiuwan."
         },
         {
           "title": "File Name",
-          "description": "Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.",
+          "description": "(Optional) Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "file_name",
-          "tooltip": "Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.."
+          "tooltip": "(Optional) Specify the name of the file for which you want to create a mutes for rule/file in Kiuwan.."
         },
         {
           "title": "File Pattern",
-          "description": "Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan.",
+          "description": "(Optional) Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "file_pattern",
-          "tooltip": "Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan."
+          "tooltip": "(Optional) Specify a comma-separated list of file pattern for which you want to create a mutes for rule/file in Kiuwan."
         },
         {
           "title": "Rule",
-          "description": "Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
+          "description": "(Optional) Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "rule",
-          "tooltip": "Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
+          "tooltip": "(Optional) Specify the rule code for which you want to create a mutes for rule/file in Kiuwan.",
           "placeholder": "e.g. OPT.JAVA.FMETODOS.NCE"
         },
         {
           "title": "Mute Reason",
-          "description": "Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "description": "(Optional) Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "reason",
-          "tooltip": "Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "tooltip": "(Optional) Specify the mute reason for which you want to create a mutes for rule/file in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
           "options": [
             "NONE",
             "FALSE_POSITIVE",
@@ -2486,23 +2458,23 @@
         },
         {
           "title": "Comment",
-          "description": "Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan.",
+          "description": "(Optional) Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "comment",
-          "tooltip": "Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan."
+          "tooltip": "(Optional) Comment that you want to associate with the specified suppresion rule that you want to create in Kiuwan."
         },
         {
           "title": "Mute By",
-          "description": "Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
+          "description": "(Optional) Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "muteBy",
-          "tooltip": "Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
+          "tooltip": "(Optional) Specify the mute for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: LINE_NUMBER or SOURCE_CODE.",
           "options": [
             "LINE_NUMBER",
             "SOURCE_CODE"
@@ -2511,13 +2483,13 @@
         },
         {
           "title": "Mute Reason",
-          "description": "Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "description": "(Optional) Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "reason",
-          "tooltip": "Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
+          "tooltip": "(Optional) Specify the mute reason for which you want to create a suppresion rule in Kiuwan. You can choose from the following options: NONE, FALSE_POSITIVE, TOO_MANY_DEFECTS, GENERATED_CODE, TOO_COMPLEX_CODE, or OTHER.",
           "options": [
             "NONE",
             "FALSE_POSITIVE",
@@ -2587,50 +2559,43 @@
         },
         {
           "title": "Code Security",
-          "description": "Select this option based on which you want to retrieve violated rules from Kiuwan.",
+          "description": "(Optional) Select this option based on which you want to retrieve violated rules from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "onlyCodeSecurity",
-          "tooltip": "Select this option based on which you want to retrieve violated rules from Kiuwan."
+          "tooltip": "(Optional) Select this option based on which you want to retrieve violated rules from Kiuwan."
         },
         {
           "title": "Characteristics",
-          "description": "Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "characteristics",
-          "tooltip": "Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. You can choose from the following options: Efficiency, Maintainability, Portability, Reliability, or Security.",
-          "options": [
-            "Efficiency",
-            "Maintainability",
-            "Portability",
-            "Reliability",
-            "Security"
-          ]
+          "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve violated rules from Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security."
         },
         {
           "title": "Languages",
-          "description": "Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan.",
+          "description": "(Optional) Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "languages",
-          "tooltip": "Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan."
+          "tooltip": "(Optional) Specify a Comma-separated list of languages for which you want to filter violated rules in Kiuwan."
         },
         {
           "title": "Priority",
-          "description": "Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "description": "(Optional) Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "priority",
-          "tooltip": "Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
+          "tooltip": "(Optional) Select a priority for which you want to filter violated rules in Kiuwan. You can choose from the following options: Very low, Low, Normal, High, or Very high.",
           "options": [
             "Very low",
             "Low",
@@ -2641,23 +2606,23 @@
         },
         {
           "title": "Tag",
-          "description": "Specify a tag for which you want to filter violated rules in Kiuwan.",
+          "description": "(Optional) Specify a tag for which you want to filter violated rules in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "tag",
-          "tooltip": "Specify a tag for which you want to filter violated rules in Kiuwan."
+          "tooltip": "(Optional) Specify a tag for which you want to filter violated rules in Kiuwan."
         },
         {
           "title": "Vulnerability Type",
-          "description": "Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
+          "description": "(Optional) Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "vuln_type",
-          "tooltip": "Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
+          "tooltip": "(Optional) Select a type of the vulnerability for which you want to filter violated rules in Kiuwan. You can choose from the following options: Permissions, Privileges and Access Controls, Injection, Error Handling and Fault Isolation, Other, Encryption and Randomness, Misconfiguration, Design Error, Initialization and Shutdown, Control Flow Management, File Handling, Number Handling, System Element Isolation, Buffer Handling, Information Leaks, Pointer, or Reference Handling.",
           "options": [
             "Permissions",
             "Privileges and Access Controls",
@@ -2817,7 +2782,7 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "type": "text",
+          "type": "integer",
           "name": "defect_id",
           "tooltip": "Specify the ID of the defect for which you want to update a defect status in Kiuwan."
         },
@@ -2838,13 +2803,13 @@
         },
         {
           "title": "Note",
-          "description": "Add note that you want to associate with the specified defect that you want to update in Kiuwan.",
+          "description": "(Optional) Add note that you want to associate with the specified defect that you want to update in Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "note",
-          "tooltip": "Add note that you want to associate with the specified defect that you want to update in Kiuwan."
+          "tooltip": "(Optional) Add note that you want to associate with the specified defect that you want to update in Kiuwan."
         }
       ],
       "output_schema": {}

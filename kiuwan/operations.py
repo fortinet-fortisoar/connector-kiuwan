@@ -9,20 +9,6 @@ from connectors.core.connector import ConnectorError, get_logger
 
 logger = get_logger('kiuwan')
 
-errors = {
-    '401': 'Unauthorized, API key invalid',
-    '405': 'Method Not Allowed, Method other than POST used',
-    '413': 'Request Entity Too Large, Sample file size over max limit',
-    '415': 'Unsupported Media Type',
-    '418': 'Unsupported File Type Sample, file type is not supported',
-    '419': 'Request quota exceeded',
-    '420': 'Insufficient arguments',
-    '421': 'Invalid arguments',
-    '500': 'Internal error',
-    '502': 'Bad Gateway',
-    '513': 'File upload failed'
-}
-
 Vuln_Type = {
     "Permissions": "Permissions",
     "Privileges and Access Controls": "privileges and access controls",
@@ -74,8 +60,8 @@ class Kiuwan(object):
             elif response.status_code == 404:
                 return response
             else:
-                logger.error("{0}".format(errors.get(response.status_code, '')))
-                raise ConnectorError("{0}".format(errors.get(response.status_code, response.text)))
+                logger.error("{0}".format(response.status_code, ''))
+                raise ConnectorError("{0}".format(response.status_code, response.text))
         except requests.exceptions.SSLError:
             raise ConnectorError('SSL certificate validation failed')
         except requests.exceptions.ConnectTimeout:
