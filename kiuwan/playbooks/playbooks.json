@@ -1,0 +1,2151 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Kiuwan - 1.0.0",
+      "description": "Sample playbooks for \"Kiuwan\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "uuid": "53b132ac-d436-41e0-83d9-21100e9b9b47",
+      "id": 208,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Files Defects Details",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a files with metric values and defects for a specific analysis from kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240613,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/276d8225-4986-4f09-9ba5-aee23c73c575",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "d3cc2efd-583e-44a4-9797-a09568342b05",
+                "title": "Kiuwan: Get Files Defects Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "276d8225-4986-4f09-9ba5-aee23c73c575"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Files Defects Details",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "code": "A-7e3-16dc9e29131"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_files_defects_details",
+                "operationTitle": "Get Files Defects Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "8bb89767-1072-4e0c-8a55-07eed4493808"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Files Defects Details",
+              "targetStep": "/api/3/workflow_steps/8bb89767-1072-4e0c-8a55-07eed4493808",
+              "sourceStep": "/api/3/workflow_steps/276d8225-4986-4f09-9ba5-aee23c73c575",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "964f0488-ff12-4ac2-b7b3-10d1ef4dc5eb"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "16ac87fe-e445-4328-8b1b-3e3a4b938b19",
+          "id": 2827,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Application Analysis",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a analysis results for a concrete analysis specified by code parameter from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240059,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/09572af1-797f-42ef-a81d-62aabcc0091b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "a19e64e0-a48f-4e29-94bd-39234cbca72c",
+                "title": "Kiuwan: Get Application Analysis",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "09572af1-797f-42ef-a81d-62aabcc0091b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Application Analysis",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_application_analysis",
+                "operationTitle": "Get Application Analysis",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b346d8d6-6049-4c69-b37c-1aa5057ca3cf"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Application Analysis",
+              "targetStep": "/api/3/workflow_steps/b346d8d6-6049-4c69-b37c-1aa5057ca3cf",
+              "sourceStep": "/api/3/workflow_steps/09572af1-797f-42ef-a81d-62aabcc0091b",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "8966fe81-707c-42d7-8561-e594bbacb91e"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "23ee328c-69c8-478c-829f-349f58229702",
+          "id": 2823,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Analysis",
+          "aliasName": null,
+          "tag": null,
+          "description": "Delete a specific analysis details from Kiuwan based on the analysis code that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240638,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b60a793d-290b-4adb-ae60-9191e8cd1ebe",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Analysis",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "analysis_code": "A-7e3-16e5b1aad2a"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "delete_analysis",
+                "operationTitle": "Delete Analysis",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "349402fa-c487-4f8e-b121-87ed14265169"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "cec9e7c8-1ded-4f91-85b8-724571ad796d",
+                "title": "Kiuwan: Delete Analysis",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b60a793d-290b-4adb-ae60-9191e8cd1ebe"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Delete Analysis",
+              "targetStep": "/api/3/workflow_steps/349402fa-c487-4f8e-b121-87ed14265169",
+              "sourceStep": "/api/3/workflow_steps/b60a793d-290b-4adb-ae60-9191e8cd1ebe",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f3922e70-82d1-4177-ac2e-9471ea042b73"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2df757f0-3702-46bd-9efb-0ea60e1a8a7a",
+          "id": 2811,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Pending Defects for Action Plan",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the pending defects of an action plan from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239693,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1835a23a-abad-4fa9-9948-10de9a3135ba",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Pending Defects for Action Plan",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "limit": "",
+                  "orderBy": "",
+                  "sort_by": true,
+                  "app_name": "myApp",
+                  "languages": "",
+                  "priorities": "",
+                  "action_name": "ActionPlan",
+                  "fileContains": "",
+                  "analysisLabel": "",
+                  "creation_date": "",
+                  "characteristics": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_pending_defects_for_action_plan",
+                "operationTitle": "Get Pending Defects for Action Plan",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "114dcef1-09f6-4c19-a5d6-74da0b6a0ec5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "89d48620-c9d2-43ff-bfc4-725f0dac80a7",
+                "title": "Kiuwan: Get Pending Defects for Action Plan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "1835a23a-abad-4fa9-9948-10de9a3135ba"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Pending Defects for Action Plan",
+              "targetStep": "/api/3/workflow_steps/114dcef1-09f6-4c19-a5d6-74da0b6a0ec5",
+              "sourceStep": "/api/3/workflow_steps/1835a23a-abad-4fa9-9948-10de9a3135ba",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "8af750d4-b435-4b75-97a6-305502165021"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3341a801-bd66-4e99-8bf3-8bc4eee03e54",
+          "id": 2816,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Analysis List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of analysis from Kuiwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809436,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Analysis List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "page": 1,
+                  "count": 500,
+                  "status": "",
+                  "app_name": "",
+                  "end_date": "",
+                  "deliveries": "",
+                  "start_date": "",
+                  "audit_status": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_analysis_list",
+                "operationTitle": "Get Analysis List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9fb9d2bc-b9d7-4202-a0cb-274eb4f1f996"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "b900e631-1c8e-4797-af5f-23110533b804",
+                "title": "Kiuwan: Get Analysis List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Analysis List",
+              "targetStep": "/api/3/workflow_steps/9fb9d2bc-b9d7-4202-a0cb-274eb4f1f996",
+              "sourceStep": "/api/3/workflow_steps/cb2eadaa-68f5-41c1-9dfb-90c559d3bfa8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "837f3af1-f018-4003-80d5-e852f5d74daa"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "4282ee99-6e6a-4b03-b6a8-5eefc7ab13ee",
+          "id": 2812,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create Suppresion Rule",
+          "aliasName": null,
+          "tag": null,
+          "description": "Create a suppresion rule in Kiuwan based on the defect ID and other input parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240733,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c7ec65b3-76a5-4d55-afc0-4d91294e87d1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Suppresion Rule",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "muteBy": "LINE_NUMBER",
+                  "reason": "",
+                  "comment": "",
+                  "defect_id": "17375778"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "create_suppresion_rule",
+                "operationTitle": "Create Suppresion Rule",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4c2297df-095d-427d-b659-99396c6ba6f2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "aa919295-bab2-4119-b874-57f0c377fe08",
+                "title": "Kiuwan: Create Suppresion Rule",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c7ec65b3-76a5-4d55-afc0-4d91294e87d1"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Suppresion Rule",
+              "targetStep": "/api/3/workflow_steps/4c2297df-095d-427d-b659-99396c6ba6f2",
+              "sourceStep": "/api/3/workflow_steps/c7ec65b3-76a5-4d55-afc0-4d91294e87d1",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "0558c6bc-b878-41f7-a04e-eb5b5db7de02"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "5653aa00-b0a6-4a38-a60d-1bfc1dabee91",
+          "id": 2828,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Removed Defects for Action Plan",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the removed defects of an action plan in Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239746,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6edd2de8-6a91-44c1-bb19-cbb7cce66810",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Removed Defects for Action Plan",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp",
+                  "action_name": "ActionPlan",
+                  "analysisLabel": "",
+                  "creation_date": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_removed_defects_for_action_plan",
+                "operationTitle": "Get Removed Defects for Action Plan",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "0d2f8969-e0a2-42ad-a1e4-f6953e5e9627"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e0ad9c57-d159-47ae-85f0-3bda2e9d67e3",
+                "title": "Kiuwan: Get Removed Defects for Action Plan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "6edd2de8-6a91-44c1-bb19-cbb7cce66810"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Removed Defects for Action Plan",
+              "targetStep": "/api/3/workflow_steps/0d2f8969-e0a2-42ad-a1e4-f6953e5e9627",
+              "sourceStep": "/api/3/workflow_steps/6edd2de8-6a91-44c1-bb19-cbb7cce66810",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "df997ce5-0e5d-41ab-960b-48a5faee5173"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "77809e18-e33d-4656-a578-c882b3a3c5ec",
+          "id": 2817,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Defect Status",
+          "aliasName": null,
+          "tag": null,
+          "description": "Update status of this defect and add a note in Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661241180,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e9c4c850-afe7-4576-a13b-70b74d2c99e6",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "04e92dd3-574d-449e-b3bf-97f4e843889e",
+                "title": "Kiuwan: Update Defect Status",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "e9c4c850-afe7-4576-a13b-70b74d2c99e6"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Defect Status",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "note": "",
+                  "status": "TO_REVIEW",
+                  "defect_id": "17375778"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "update_defect_status",
+                "operationTitle": "Update Defect Status",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "fe69efd9-fc34-4977-bc2b-01507730371c"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Defect Status",
+              "targetStep": "/api/3/workflow_steps/fe69efd9-fc34-4977-bc2b-01507730371c",
+              "sourceStep": "/api/3/workflow_steps/e9c4c850-afe7-4576-a13b-70b74d2c99e6",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "2ccbcc19-c541-44a4-b9dd-f341ed67ef13"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "77f6d84e-8010-4418-859f-86035168256b",
+          "id": 2833,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Analysis Defects List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of all analysis defects for a concrete analysis from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240150,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6da58ca7-745d-44b1-ba0f-19ab67e09529",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Analysis Defects List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "code": "A-7e3-16e5b1aad2a",
+                  "page": 1,
+                  "count": 500,
+                  "muted": "",
+                  "orderBy": "",
+                  "sort_by": false,
+                  "languages": "",
+                  "priorities": "",
+                  "fileContains": "",
+                  "characteristics": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_analysis_defects_list",
+                "operationTitle": "Get Analysis Defects List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "61ec686a-463e-499d-a11b-59677b757f47"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "19053d0e-6e68-4e10-8c04-341846ca632b",
+                "title": "Kiuwan: Get Analysis Defects List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "6da58ca7-745d-44b1-ba0f-19ab67e09529"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Analysis Defects List",
+              "targetStep": "/api/3/workflow_steps/61ec686a-463e-499d-a11b-59677b757f47",
+              "sourceStep": "/api/3/workflow_steps/6da58ca7-745d-44b1-ba0f-19ab67e09529",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "eaa6c37b-67cc-47c2-a8d1-6b66bae7d595"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "7eb85858-7001-4b64-b49a-ac85b2884828",
+          "id": 2824,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Progress Summary for Action Plan",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the current and the past main metrics and indicators of an application for an action plan from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1660809583,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/384f7754-d1e9-40f1-bd54-11daacef96fd",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2979cdb2-2449-43dd-8da2-cc09a4f92306",
+                "title": "Kiuwan: Get Progress Summary for Action Plan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "384f7754-d1e9-40f1-bd54-11daacef96fd"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Progress Summary for Action Plan",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myapp",
+                  "action_name": "sample",
+                  "creation_date": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_progress_summary_for_action_plan",
+                "operationTitle": "Get Progress Summary for Action Plan",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "828bc304-7522-4e32-8331-95b7b8b69fd9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Progress Summary for Action Plan",
+              "targetStep": "/api/3/workflow_steps/828bc304-7522-4e32-8331-95b7b8b69fd9",
+              "sourceStep": "/api/3/workflow_steps/384f7754-d1e9-40f1-bd54-11daacef96fd",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "4b3f73a5-fc76-462c-9ae5-966480b02408"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "8277989b-c926-4caf-8754-b6fdee9794f3",
+          "id": 2813,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Defects List for Action Plan",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the list of all defects included in an action plan from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239616,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/11c708c7-514d-49e2-a88c-f031921ea49a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ca6bcb4e-8eb7-4513-87a3-beb9aeebbd7d",
+                "title": "Kiuwan: Get Defects List for Action Plan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "11c708c7-514d-49e2-a88c-f031921ea49a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Defects List for Action Plan",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp",
+                  "action_name": "ActionPlan",
+                  "creation_date": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_defects_list_for_action_plan",
+                "operationTitle": "Get Defects List for Action Plan",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "7c67f8a0-fd02-4e1f-b358-b0e64448e9db"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Defects List for Action Plan",
+              "targetStep": "/api/3/workflow_steps/7c67f8a0-fd02-4e1f-b358-b0e64448e9db",
+              "sourceStep": "/api/3/workflow_steps/11c708c7-514d-49e2-a88c-f031921ea49a",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "57e09873-f565-4cec-b29e-b7efd4ae4262"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "8f53396c-37be-4667-b6c2-f0386a5dd982",
+          "id": 2815,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Analysis Codes List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the list of analysis codes for an application from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239891,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/7eeeec7a-81e2-46df-b61f-941eae0bb016",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Analysis Codes List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "count": "",
+                  "success": "",
+                  "app_name": "myApp",
+                  "filterPurgedAnalyses": true
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_analysis_codes_list",
+                "operationTitle": "Get Analysis Codes List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "611e5e48-506c-4ad3-ae7e-4e8c67af08eb"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "a0f590d8-35fe-43d5-a46e-a01fdc69fd24",
+                "title": "Kiuwan: Get Analysis Codes List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "7eeeec7a-81e2-46df-b61f-941eae0bb016"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Analysis Codes List",
+              "targetStep": "/api/3/workflow_steps/611e5e48-506c-4ad3-ae7e-4e8c67af08eb",
+              "sourceStep": "/api/3/workflow_steps/7eeeec7a-81e2-46df-b61f-941eae0bb016",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e475a32d-f60d-4069-8443-b2a6d1da4b53"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9326d95c-72d0-43e8-8437-2febab6e6f20",
+          "id": 2820,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create Mutes for Rule or File",
+          "aliasName": null,
+          "tag": null,
+          "description": "Create a mutes for a rule/file in Kiuwan based on the application name and other parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240662,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/23fc2d45-3aea-4328-a7da-2c79aad34884",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "81189abd-12cb-4eb0-b9f6-dd310acb7a04",
+                "title": "Kiuwan: Create Mutes for Rule or File",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "23fc2d45-3aea-4328-a7da-2c79aad34884"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Mutes for Rule or File",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "rule": "",
+                  "reason": "",
+                  "comment": "",
+                  "app_name": "myApp",
+                  "file_name": "",
+                  "file_pattern": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "create_mutes_for_rule_or_file",
+                "operationTitle": "Create Mutes for Rule or File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "6fb842b6-1bf3-42b6-b5a5-09bb1d901b02"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Mutes for Rule or File",
+              "targetStep": "/api/3/workflow_steps/6fb842b6-1bf3-42b6-b5a5-09bb1d901b02",
+              "sourceStep": "/api/3/workflow_steps/23fc2d45-3aea-4328-a7da-2c79aad34884",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f25fa7ed-b120-45dd-8482-38529586cbc5"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9648b013-5de5-4fc5-aa4b-4b11b607ca73",
+          "id": 2814,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Defect Notes",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieve a list of notes associated to this defect from kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240785,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/336c33c6-6f62-4343-8d65-4923c8a9b143",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "8ac12ae1-4a31-4307-ab8b-6513223ead05",
+                "title": "kiuwan: Get Defect Notes",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "336c33c6-6f62-4343-8d65-4923c8a9b143"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Defect Notes",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "defect_id": 17375778
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_defect_notes",
+                "operationTitle": "Get Defect Notes",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "466df6cc-11b2-4575-9ce2-2fb7a128bd93"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Defect Notes",
+              "targetStep": "/api/3/workflow_steps/466df6cc-11b2-4575-9ce2-2fb7a128bd93",
+              "sourceStep": "/api/3/workflow_steps/336c33c6-6f62-4343-8d65-4923c8a9b143",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e835778f-9d32-4099-96b7-b5bd529f8e8d"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a59418e7-accc-4d76-aed8-980ecdfb660d",
+          "id": 2829,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Latest Analysis",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a last analysis for the authenticated user and the application indicated from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240006,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cce894ba-856f-4563-8a0d-f15c73506306",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Latest Analysis",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_last_analysis",
+                "operationTitle": "Get Latest Analysis",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "91df08e6-916a-42a2-9d46-d50ad2d4b0c1"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "eedd3fad-3d25-4b34-b699-e542b29720af",
+                "title": "Kiuwan: Get Latest Analysis",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "cce894ba-856f-4563-8a0d-f15c73506306"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Latest Analysis",
+              "targetStep": "/api/3/workflow_steps/91df08e6-916a-42a2-9d46-d50ad2d4b0c1",
+              "sourceStep": "/api/3/workflow_steps/cce894ba-856f-4563-8a0d-f15c73506306",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "19078a5f-7968-4021-abf1-4a8bc6769cc9"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a64f114a-7d04-4387-a0bb-1bb3cf70d38a",
+          "id": 2822,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Comparison Defects",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a net number of new and removed defects and violated rules after comparing 2 given analyses from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240454,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/eb6dc2cc-1a0e-400c-b2fd-9e790ac90af0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Comparison Defects",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "code": "A-7e3-16e5b1aad2a",
+                  "prev_code": "A-7e3-16dc9e29131"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_comparison_defects",
+                "operationTitle": "Get Comparison Defects",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d83d40f7-1614-46af-b13f-53813c8529b0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1034c481-5430-4c5b-9ad9-df375751aac0",
+                "title": "Kiuwan: Get Comparison Defects",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "eb6dc2cc-1a0e-400c-b2fd-9e790ac90af0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Comparison Defects",
+              "targetStep": "/api/3/workflow_steps/d83d40f7-1614-46af-b13f-53813c8529b0",
+              "sourceStep": "/api/3/workflow_steps/eb6dc2cc-1a0e-400c-b2fd-9e790ac90af0",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "c03e6026-7ae2-4822-a217-af959289257e"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "b11a8c20-2925-4c61-9263-485d285914ac",
+          "id": 2825,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get New/Removed Defects List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of new/removed defects in an analysis from the previous analysis from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240548,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c6fff82e-40b1-4f32-804b-2f9c57463b82",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "a4165c4c-fbfd-4733-a51e-014d6708a74a",
+                "title": "kiuwan: Get New/Removed Defects List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c6fff82e-40b1-4f32-804b-2f9c57463b82"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get New or Removed Defects List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "code": "A-7e3-16e5b1aad2a",
+                  "prev_code": "A-7e3-16dc9e29131",
+                  "defectstype": "New"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_new_removed_defects_list",
+                "operationTitle": "Get New/Removed Defects List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "f2a8f044-8225-46df-9652-61d08d1373c8"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get New or Removed Defects List",
+              "targetStep": "/api/3/workflow_steps/f2a8f044-8225-46df-9652-61d08d1373c8",
+              "sourceStep": "/api/3/workflow_steps/c6fff82e-40b1-4f32-804b-2f9c57463b82",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "426c59d7-8fa7-47ff-b830-c8544f8d430c"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "bb0f6bee-4c28-4ae1-9940-7b86569b22c0",
+          "id": 2826,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Available Action Plans",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the list of actions plans of an application from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239795,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d1b935b3-f171-45b3-b53b-24fbe384b539",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Available Action Plans",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_available_action_plans",
+                "operationTitle": "Get Available Action Plans",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "27694761-2684-44d1-b304-828afe7dfba4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "07235841-f468-4e02-9669-30c8573ccae6",
+                "title": "Kiuwan: Get Available Action Plans",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "d1b935b3-f171-45b3-b53b-24fbe384b539"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Available Action Plans",
+              "targetStep": "/api/3/workflow_steps/27694761-2684-44d1-b304-828afe7dfba4",
+              "sourceStep": "/api/3/workflow_steps/d1b935b3-f171-45b3-b53b-24fbe384b539",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "4b230f50-649a-4452-a77f-25f6c5e83ec7"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "bd0f9802-6011-417e-8941-2311cb6ca75b",
+          "id": 2818,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Violated Rules",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of violated rules of an analysis for the authenticated user from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240844,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e81962f0-a772-44be-8dec-4e0830e257ae",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Violated Rules",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "tag": "",
+                  "app_name": "myApp",
+                  "priority": "",
+                  "languages": "",
+                  "vuln_type": "",
+                  "analysisCode": "",
+                  "characteristics": "",
+                  "onlyCodeSecurity": ""
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_violated_rules",
+                "operationTitle": "Get Violated Rules",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "bd9019b0-293d-46d8-96b1-54a3d9038f97"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ea8064d3-c4eb-439f-ba5c-1551be6d2411",
+                "title": "Kiuwan: Get Violated Rules",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "e81962f0-a772-44be-8dec-4e0830e257ae"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Violated Rules",
+              "targetStep": "/api/3/workflow_steps/bd9019b0-293d-46d8-96b1-54a3d9038f97",
+              "sourceStep": "/api/3/workflow_steps/e81962f0-a772-44be-8dec-4e0830e257ae",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f55f7e35-4c6a-4cb6-9aa8-f1ceb9c83f24"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "c3b49c73-41bd-4cdf-b68e-78d512a88f78",
+          "id": 2830,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get File Defects",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of defects in a file for a concrete violated rule in Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661241105,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cf02ab9c-ae46-4af1-8644-274e1ef7c430",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get File Defects",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp",
+                  "ruleCode": "OPT.JAVA.SEC_JAVA.CrossSiteScriptingRule",
+                  "file_name": "src/main/java/com/myCompany/myApp/CSRFServlet.java",
+                  "analysisCode": "A-7e3-16e5b1aad2a"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_file_defects",
+                "operationTitle": "Get File Defects",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "a9d96dd7-04d7-4b66-aa94-dca445ec35e1"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "34879ce4-3ae4-42c9-a572-fe7f0397b137",
+                "title": "Kiuwan: Get File Defects",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "cf02ab9c-ae46-4af1-8644-274e1ef7c430"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get File Defects",
+              "targetStep": "/api/3/workflow_steps/a9d96dd7-04d7-4b66-aa94-dca445ec35e1",
+              "sourceStep": "/api/3/workflow_steps/cf02ab9c-ae46-4af1-8644-274e1ef7c430",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "dfa13639-bb8b-4523-b334-12631a64bc4d"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e24293fb-30f4-4926-8f1d-3e314c16f08a",
+          "id": 2832,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Violated Rule Files",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of files where the violated rule affects in Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661240933,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8199181d-5c64-4e5c-8408-69630187c7be",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "34dff747-e33a-438b-9024-8ac40986224b",
+                "title": "Kiuwan: Get Violated Rule Files",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "8199181d-5c64-4e5c-8408-69630187c7be"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Violated Rule Files",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp",
+                  "ruleCode": "OPT.JAVA.SEC_JAVA.CrossSiteScriptingRule",
+                  "analysisCode": "A-7e3-16e5b1aad2a"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_violated_rule_files",
+                "operationTitle": "Get Violated Rule Files",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9859f568-2665-4b61-bf60-66895d368fc7"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Violated Rule Files",
+              "targetStep": "/api/3/workflow_steps/9859f568-2665-4b61-bf60-66895d368fc7",
+              "sourceStep": "/api/3/workflow_steps/8199181d-5c64-4e5c-8408-69630187c7be",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d398e6ac-e848-4cff-81f5-71b2daacf520"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f02f4960-61fa-450f-8f05-530e846af50d",
+          "id": 2831,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Latest Analysis Files List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of files with metric values and defects of the latest analysis for the named application from Kiuwan.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1661239955,
+          "collection": "/api/3/workflow_collections/53b132ac-d436-41e0-83d9-21100e9b9b47",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c2cd9240-20c8-419b-b8de-d8e7931394b5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3d5309cd-8bae-473e-be0a-44ace5aed1e1",
+                "title": "Kiuwan: Get Latest Analysis Files List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c2cd9240-20c8-419b-b8de-d8e7931394b5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Latest Analysis Files List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "myApp"
+                },
+                "version": "1.0.0",
+                "connector": "kiuwan",
+                "operation": "get_latest_analysis_files_list",
+                "operationTitle": "Get Latest Analysis Files List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "edc8cb6e-cec6-4360-b4de-2c34a32dbb85"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Latest Analysis Files List",
+              "targetStep": "/api/3/workflow_steps/edc8cb6e-cec6-4360-b4de-2c34a32dbb85",
+              "sourceStep": "/api/3/workflow_steps/c2cd9240-20c8-419b-b8de-d8e7931394b5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "cf75225e-61a9-4ecc-867d-ba51ea7a07e8"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f0816edc-c560-43c8-8d3d-9948a17bb503",
+          "id": 2821,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "kiuwan"
+  ]
+}
