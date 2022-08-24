@@ -292,17 +292,6 @@
           "tooltip": "(Optional) Specify the analysis label for which you want to retrieve pending defects for action plan from Kiuwan."
         },
         {
-          "title": "Sort By",
-          "description": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "checkbox",
-          "name": "sort_by",
-          "tooltip": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
-          "value": true
-        },
-        {
           "title": "Characteristics",
           "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve pending defects for the action plan in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
@@ -333,6 +322,16 @@
           "tooltip": "(Optional) Specify a Comma-separated list of languages for which you want to filter pending defects in Kiuwan."
         },
         {
+          "title": "Priorities",
+          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "priorities",
+          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
+        },
+        {
           "title": "Limit",
           "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response.",
           "required": false,
@@ -357,14 +356,15 @@
           ]
         },
         {
-          "title": "Priorities",
-          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
+          "title": "Sort By",
+          "description": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "text",
-          "name": "priorities",
-          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
+          "type": "checkbox",
+          "name": "sort_by",
+          "tooltip": "(Optional) Select this option (default is selected) to sort the pending defects retrieved from Kiuwan in ascending order.",
+          "value": true
         }
       ],
       "output_schema": {
@@ -633,17 +633,6 @@
           ]
         },
         {
-          "title": "Limit",
-          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "count",
-          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
-          "value": 500
-        },
-        {
           "title": "Deliveries",
           "description": "(Optional) Select this option to run deliveries on the analysis results in Kiuwan.",
           "required": false,
@@ -674,17 +663,6 @@
           "tooltip": "(Optional) Specify the ending DateTime till when you want to retrieve analysis from Kiuwan."
         },
         {
-          "title": "Page",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "page",
-          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
-          "value": 1
-        },
-        {
           "title": "Status",
           "description": "(Optional) Select the status based on which you want to filter the analysis retrieved from Kiuwan. You can choose from the following options: SUCCESS, FAIL, or INPROGRESS.",
           "required": false,
@@ -698,6 +676,28 @@
             "FAIL",
             "INPROGRESS"
           ]
+        },
+        {
+          "title": "Limit",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "value": 500
+        },
+        {
+          "title": "Page",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "value": 1
         }
       ],
       "output_schema": [
@@ -752,16 +752,6 @@
           "tooltip": "Specify the name of the application for which you want to retrieve analysis codes from Kiuwan."
         },
         {
-          "title": "Limit",
-          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "count",
-          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500."
-        },
-        {
           "title": "Purged Analyses",
           "description": "(Optional) Select the purged analyses based on which you don't want to filter the purged analyses retrieved from Kiuwan. By Default, it set to True.",
           "required": false,
@@ -781,6 +771,16 @@
           "type": "checkbox",
           "name": "success",
           "tooltip": "(Optional) Select the option based on which you want to retrieved succeeded analysis code from Kiuwan."
+        },
+        {
+          "title": "Limit",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By default, this value is set to 500."
         }
       ],
       "output_schema": [
@@ -1524,17 +1524,6 @@
           "tooltip": "Specify the analysis code for which you want to retrieve analysis defects from Kiuwan."
         },
         {
-          "title": "Sort By",
-          "description": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "checkbox",
-          "name": "sort_by",
-          "tooltip": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
-          "value": false
-        },
-        {
           "title": "Characteristics",
           "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
@@ -1543,17 +1532,6 @@
           "type": "text",
           "name": "characteristics",
           "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve analysis defects in Kiuwan. Possible values are: Efficiency, Maintainability, Portability, Reliability, or Security."
-        },
-        {
-          "title": "Limit",
-          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By Default, is set to 500.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "integer",
-          "name": "count",
-          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response.By Default, is set to 500.",
-          "value": 500
         },
         {
           "title": "File Contains",
@@ -1586,6 +1564,38 @@
           "tooltip": "(Optional) Select the mutes based on which you want to filter defects by their mute status in Kiuwan"
         },
         {
+          "title": "Priorities",
+          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "priorities",
+          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
+        },
+        {
+          "title": "Limit",
+          "description": "(Optional) Specify the maximum number of results this operation should return, per page, in the response. By Default, is set to 500.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "tooltip": "(Optional) Specify the maximum number of results this operation should return, per page, in the response.By Default, is set to 500.",
+          "value": 500
+        },
+        {
+          "title": "Page",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "value": 1
+        },
+        {
           "title": "Order By",
           "description": "(Optional) Select the option based on which you want to filter the analysis defects retrieved from Kiuwan. You can choose either Priority or Effort.",
           "required": false,
@@ -1600,25 +1610,15 @@
           ]
         },
         {
-          "title": "Page",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
+          "title": "Sort By",
+          "description": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
-          "type": "integer",
-          "name": "page",
-          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say messages starting from the 10th message. By default, this is set as 1.",
-          "value": 1
-        },
-        {
-          "title": "Priorities",
-          "description": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "select",
-          "name": "priorities",
-          "tooltip": "(Optional) Specify a Comma-separated list of priorities for which you want to filter pending defects in Kiuwan. Possible values are: Very low, Low, Normal, High, or Very high."
+          "type": "checkbox",
+          "name": "sort_by",
+          "tooltip": "(Optional) Select this option (default is not selected) to sort the analysis defects retrieved from Kiuwan in ascending order.",
+          "value": false
         }
       ],
       "output_schema": {

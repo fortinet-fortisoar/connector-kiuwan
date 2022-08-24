@@ -90,35 +90,27 @@ def check_payload(payload):
 def get_progress_summary_for_action_plan(config, params):
     kw = Kiuwan(config)
     endpoint = 'actionPlan'
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'name': params.get('action_name'),
-            'creation': params.get('creation_date')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'name': params.get('action_name'),
+        'creation': params.get('creation_date')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_defects_list_for_action_plan(config, params):
     kw = Kiuwan(config)
     endpoint = 'actionPlan/defects/all'
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'name': params.get('action_name'),
-            'creation': params.get('creation_date')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'name': params.get('action_name'),
+        'creation': params.get('creation_date')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_pending_defects_for_action_plan(config, params):
@@ -127,140 +119,108 @@ def get_pending_defects_for_action_plan(config, params):
     orderBy = params.get('orderBy')
     if orderBy:
         orderBy = orderBy.lower()
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'name': params.get('action_name'),
-            'creation': params.get('creation_date'),
-            'analysisLabel': params.get('analysisLabel'),
-            'asc': params.get('sort_by'),
-            'characteristics': params.get('characteristics'),
-            'fileContains': params.get('fileContains'),
-            'languages': params.get('languages'),
-            'limit': params.get('limit'),
-            'orderBy': orderBy,
-            'priorities': params.get('priorities')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'name': params.get('action_name'),
+        'creation': params.get('creation_date'),
+        'analysisLabel': params.get('analysisLabel'),
+        'asc': params.get('sort_by'),
+        'characteristics': params.get('characteristics'),
+        'fileContains': params.get('fileContains'),
+        'languages': params.get('languages'),
+        'limit': params.get('limit'),
+        'orderBy': orderBy,
+        'priorities': params.get('priorities')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_removed_defects_for_action_plan(config, params):
     kw = Kiuwan(config)
     endpoint = 'actionPlan/defects/removed'
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'name': params.get('action_name'),
-            'creation': params.get('creation_date'),
-            'analysisLabel': params.get('analysisLabel')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'name': params.get('action_name'),
+        'creation': params.get('creation_date'),
+        'analysisLabel': params.get('analysisLabel')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_available_action_plans(config, params):
     kw = Kiuwan(config)
     endpoint = 'actionPlans'
-    try:
-        payload = {
-            'application': params.get('app_name')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_analysis_list(config, params):
     kw = Kiuwan(config)
     endpoint = 'analysis/list'
-    try:
-        payload = {
-            'applicationName': params.get('app_name'),
-            'auditStatus': params.get('audit_status'),
-            'count': params.get('count'),
-            'deliveries': params.get('deliveries'),
-            'initDate': params.get('start_date'),
-            'endDate': params.get('end_date'),
-            'page': params.get('page'),
-            'status': params.get('status')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'applicationName': params.get('app_name'),
+        'auditStatus': params.get('audit_status'),
+        'count': params.get('count'),
+        'deliveries': params.get('deliveries'),
+        'initDate': params.get('start_date'),
+        'endDate': params.get('end_date'),
+        'page': params.get('page'),
+        'status': params.get('status')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_analysis_codes_list(config, params):
     kw = Kiuwan(config)
     endpoint = 'applications/analyses'
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'filterPurgedAnalyses': params.get('filterPurgedAnalyses'),
-            'count': params.get('count'),
-            'success': params.get('success')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'filterPurgedAnalyses': params.get('filterPurgedAnalyses'),
+        'count': params.get('count'),
+        'success': params.get('success')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_latest_analysis_files_list(config, params):
     kw = Kiuwan(config)
     endpoint = 'applications/files'
-    try:
-        payload = {
-            'application': params.get('app_name')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_last_analysis(config, params):
     kw = Kiuwan(config)
     endpoint = 'applications/last_analysis'
-    try:
-        payload = {
-            'application': params.get('app_name')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_application_analysis(config, params):
     kw = Kiuwan(config)
     endpoint = 'apps/analysis/{0}'.format(params.get('code'))
-    try:
-        response = kw.make_rest_call(endpoint, 'GET')
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
 
 
 def get_analysis_defects_list(config, params):
@@ -269,35 +229,27 @@ def get_analysis_defects_list(config, params):
     orderBy = params.get('orderBy')
     if orderBy:
         orderBy = orderBy.lower()
-    try:
-        payload = {
-            'muted': params.get('muted'),
-            'asc': params.get('sort_by'),
-            'characteristics': params.get('characteristics'),
-            'fileContains': params.get('fileContains'),
-            'languages': params.get('languages'),
-            'count': params.get('count'),
-            'orderBy': orderBy,
-            'priorities': params.get('priorities'),
-            'page': params.get('page')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'muted': params.get('muted'),
+        'asc': params.get('sort_by'),
+        'characteristics': params.get('characteristics'),
+        'fileContains': params.get('fileContains'),
+        'languages': params.get('languages'),
+        'count': params.get('count'),
+        'orderBy': orderBy,
+        'priorities': params.get('priorities'),
+        'page': params.get('page')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_comparison_defects(config, params):
     kw = Kiuwan(config)
     endpoint = 'apps/analysis/{0}/defects/compare/{1}'.format(params.get('code'), params.get('prev_code'))
-    try:
-        response = kw.make_rest_call(endpoint, 'GET')
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
 
 
 def get_new_removed_defects_list(config, params):
@@ -305,85 +257,61 @@ def get_new_removed_defects_list(config, params):
     defect_type = params.get('defect_type').lower()
     endpoint = 'apps/analysis/{0}/defects/compare/{1}/{2}'.format(params.get('code'), params.get('prev_code'),
                                                                   defect_type)
-    try:
-        response = kw.make_rest_call(endpoint, 'GET')
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
 
 
 def get_files_defects_details(config, params):
     kw = Kiuwan(config)
     endpoint = 'apps/analysis/{0}/files'.format(params.get('code'))
-    try:
-        response = kw.make_rest_call(endpoint, 'GET')
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
 
 
 def delete_analysis(config, params):
     kw = Kiuwan(config)
     endpoint = 'analysis'
-    try:
-        payload = {
-            'analysisCode': params.get('analysis_code')
-        }
-        response = kw.make_rest_call(endpoint, 'DELETE', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'analysisCode': params.get('analysis_code')
+    }
+    response = kw.make_rest_call(endpoint, 'DELETE', params=payload)
+    return response
 
 
 def create_mutes_for_rule_or_file(config, params):
     kw = Kiuwan(config)
     endpoint = 'applications/defects/mute'
-    try:
-        payload = {
-            'application': params.get('app_name'),
-            'comment': params.get('comment'),
-            'fileName': params.get('file_name'),
-            'filePattern': params.get('file_pattern'),
-            'rule': params.get('rule'),
-            'why': params.get('reason')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'POST', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'application': params.get('app_name'),
+        'comment': params.get('comment'),
+        'fileName': params.get('file_name'),
+        'filePattern': params.get('file_pattern'),
+        'rule': params.get('rule'),
+        'why': params.get('reason')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'POST', params=payload)
+    return response
 
 
 def create_suppresion_rule(config, params):
     kw = Kiuwan(config)
     endpoint = 'defect/{0}/mute'.format(params.get('defect_id'))
-    try:
-        payload = {
-            'comment': params.get('comment'),
-            'muteBy': params.get('muteBy'),
-            'why': params.get('reason')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'POST', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'comment': params.get('comment'),
+        'muteBy': params.get('muteBy'),
+        'why': params.get('reason')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'POST', params=payload)
+    return response
 
 
 def get_defect_notes(config, params):
     kw = Kiuwan(config)
     endpoint = 'defect/{0}/notes'.format(params.get('defect_id'))
-    try:
-        response = kw.make_rest_call(endpoint, 'GET')
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
 
 
 def get_violated_rules(config, params):
@@ -392,74 +320,58 @@ def get_violated_rules(config, params):
     vuln_type = params.get('vuln_type')
     if vuln_type:
         vuln_type = Vuln_Type.get(vuln_type)
-    try:
-        payload = {
-            'analysisCode': params.get('analysisCode'),
-            'application': params.get('app_name'),
-            'characteristic': params.get('characteristic'),
-            'language': params.get('language'),
-            'onlyCodeSecurity': params.get('onlyCodeSecurity'),
-            'priority': params.get('priority'),
-            'tag': params.get('tag'),
-            'vulnerabilityType': vuln_type,
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'analysisCode': params.get('analysisCode'),
+        'application': params.get('app_name'),
+        'characteristic': params.get('characteristic'),
+        'language': params.get('language'),
+        'onlyCodeSecurity': params.get('onlyCodeSecurity'),
+        'priority': params.get('priority'),
+        'tag': params.get('tag'),
+        'vulnerabilityType': vuln_type,
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_violated_rule_files(config, params):
     kw = Kiuwan(config)
     endpoint = 'violatedrules/files'
-    try:
-        payload = {
-            'analysisCode': params.get('analysisCode'),
-            'application': params.get('app_name'),
-            'ruleCode': params.get('ruleCode')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'analysisCode': params.get('analysisCode'),
+        'application': params.get('app_name'),
+        'ruleCode': params.get('ruleCode')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def get_file_defects(config, params):
     kw = Kiuwan(config)
     endpoint = 'violatedrules/files/defects'
-    try:
-        payload = {
-            'analysisCode': params.get('analysisCode'),
-            'application': params.get('app_name'),
-            'file': params.get('file_name'),
-            'ruleCode': params.get('ruleCode')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'analysisCode': params.get('analysisCode'),
+        'application': params.get('app_name'),
+        'file': params.get('file_name'),
+        'ruleCode': params.get('ruleCode')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def update_defect_status(config, params):
     kw = Kiuwan(config)
     endpoint = 'defect/{0}/status'.format(params.get('defect_id'))
-    try:
-        payload = {
-            'note': params.get('note'),
-            'status': params.get('status')
-        }
-        payload = check_payload(payload)
-        response = kw.make_rest_call(endpoint, 'GET', params=payload)
-        return response
-    except Exception as err:
-        logger.exception("{0}".format(str(err)))
-        raise ConnectorError("{0}".format(str(err)))
+    payload = {
+        'note': params.get('note'),
+        'status': params.get('status')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
 
 
 def _check_health(config):
