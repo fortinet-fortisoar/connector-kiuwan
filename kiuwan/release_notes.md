@@ -4,4 +4,4 @@
 
 #### What's Fixed
 
-- Fixed a bug where check health was failing with correct configuration. Added 'Corporate Domain ID' as config param to fix the issue.
+- Fixed a bug where check health was failing with correct configuration.
