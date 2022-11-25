@@ -33,6 +33,7 @@ class Kiuwan(object):
     def __init__(self, config, *args, **kwargs):
         self.username = config.get('username')
         self.password = config.get('password')
+        self.corporate_id = config.get('corporate_id')
         url = config.get('server_url').strip('/')
         if not url.startswith('https://') and not url.startswith('http://'):
             self.url = 'https://{0}/'.format(url)
@@ -44,7 +45,8 @@ class Kiuwan(object):
         try:
             url = self.url + url
             headers = {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'X-KW-CORPORATE-DOMAIN-ID': self.corporate_id
             }
             logger.debug("Endpoint {0}".format(url))
             response = requests.request(method, url, data=data, params=params, auth=(self.username, self.password),

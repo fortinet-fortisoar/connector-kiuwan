@@ -1,7 +1,7 @@
 {
   "name": "kiuwan",
   "label": "Kiuwan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kiuwan is a software as a service (SaaS) static application security testing multi-technology software for software analysis, code quality, software composition and security measurement/management. This connector facilitates automated operations related to Action Plan, Analyses, and Defect.",
   "publisher": "Community",
   "cs_approved": false,
@@ -10,7 +10,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/kiuwan/388/kiuwan-v1-0-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -37,6 +37,15 @@
         "description": "Specify the password used to access the Kiuwan server to which you will connect and perform the automated operations.",
         "type": "password",
         "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Corporate Domain ID",
+        "description": "Specify the domain ID of the corporate used to access the Kiuwan server to which you will connect and perform the automated operations.",
+        "type": "password",
+        "name": "corporate_id",
         "required": true,
         "editable": true,
         "visible": true
