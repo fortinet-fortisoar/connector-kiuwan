@@ -43,7 +43,7 @@
       },
       {
         "title": "Corporate Domain ID",
-        "description": "Specify the password used to access the Kiuwan server to which you will connect and perform the automated operations.",
+        "description": "Specify the domain ID of the corporate used to access the Kiuwan server to which you will connect and perform the automated operations.",
         "type": "password",
         "name": "corporate_id",
         "required": true,
