@@ -1570,7 +1570,7 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Create Suppresion Rule",
+          "name": "Create Suppression Rule",
           "aliasName": null,
           "tag": null,
           "description": "Create a suppresion rule in Kiuwan based on the defect ID and other input parameters that you have specified.",
@@ -1587,7 +1587,7 @@
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Create Suppresion Rule",
+              "name": "Create Suppression Rule",
               "description": null,
               "arguments": {
                 "name": "Kiuwan",
@@ -1601,7 +1601,7 @@
                 "version": "1.1.0",
                 "connector": "kiuwan",
                 "operation": "create_suppresion_rule",
-                "operationTitle": "Create Suppresion Rule",
+                "operationTitle": "Create Suppression Rule",
                 "pickFromTenant": false,
                 "step_variables": []
               },
@@ -1618,7 +1618,7 @@
               "description": null,
               "arguments": {
                 "route": "3228924d-526b-4615-9bab-82d62259cd52",
-                "title": "Kiuwan: Create Suppresion Rule",
+                "title": "Kiuwan: Create Suppression Rule",
                 "resources": [
                   "alerts"
                 ],
@@ -1644,7 +1644,7 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Create Suppresion Rule",
+              "name": "Start -> Create Suppression Rule",
               "targetStep": "/api/3/workflow_steps/24993f1d-32cf-4297-9d84-e485743e2928",
               "sourceStep": "/api/3/workflow_steps/c4c1414f-aaa0-4b32-b099-d1a5cd1e35f1",
               "label": null,

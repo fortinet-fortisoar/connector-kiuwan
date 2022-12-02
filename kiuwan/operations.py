@@ -296,7 +296,7 @@ def create_mutes_for_rule_or_file(config, params):
     return response
 
 
-def create_suppresion_rule(config, params):
+def create_suppression_rule(config, params):
     kw = Kiuwan(config)
     endpoint = 'defect/{0}/mute'.format(params.get('defect_id'))
     payload = {
@@ -402,7 +402,7 @@ operations = {
     'get_files_defects_details': get_files_defects_details,
     'delete_analysis': delete_analysis,
     'create_mutes_for_rule_or_file': create_mutes_for_rule_or_file,
-    'create_suppresion_rule': create_suppresion_rule,
+    'create_suppression_rule': create_suppression_rule,
     'get_defect_notes': get_defect_notes,
     'get_violated_rules': get_violated_rules,
     'get_violated_rule_files': get_violated_rule_files,
