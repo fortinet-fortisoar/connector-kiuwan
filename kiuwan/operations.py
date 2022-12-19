@@ -89,6 +89,65 @@ def check_payload(payload):
     return updated_payload
 
 
+def convert_datetime_in_format(date_time):
+    date_time = date_time.split(".")
+    return date_time[0] + 'Z'
+
+
+def get_application_list(config, params):
+    sort_dict = {
+        'Application Name': 'applicationName',
+        'Analysis Date': 'analysisDate'
+    }
+    kw = Kiuwan(config)
+    endpoint = 'applications/list'
+    initDateAnalysis = params.get('initDateAnalysis')
+    if initDateAnalysis:
+        initDateAnalysis = convert_datetime_in_format(initDateAnalysis)
+    endDateAnalysis = params.get('endDateAnalysis')
+    if endDateAnalysis:
+        endDateAnalysis = convert_datetime_in_format(endDateAnalysis)
+    orderBy = params.get('orderBy')
+    if orderBy:
+        orderBy = sort_dict.get(orderBy)
+    payload = {
+        'applicationName': params.get('app_name'),
+        'activityInfo': params.get('activityInfo'),
+        'initDateAnalysis': initDateAnalysis,
+        'endDateAnalysis': endDateAnalysis,
+        'exactApplicationName': params.get('exactApplicationName'),
+        'asc': params.get('sort_by'),
+        'count': params.get('count'),
+        'orderBy': orderBy,
+        'page': params.get('page')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
+
+
+def get_application_defects_list(config, params):
+    kw = Kiuwan(config)
+    endpoint = 'applications/defects'
+    orderBy = params.get('orderBy')
+    if orderBy:
+        orderBy = orderBy.lower()
+    payload = {
+        'application': params.get('app_name'),
+        'asc': params.get('sort_by'),
+        'characteristics': params.get('characteristics'),
+        'fileContains': params.get('fileContains'),
+        'languages': params.get('languages'),
+        'count': params.get('count'),
+        'orderBy': orderBy,
+        'priorities': params.get('priorities'),
+        'page': params.get('page')
+    }
+    payload = check_payload(payload)
+    response = kw.make_rest_call(endpoint, 'GET', params=payload)
+    return response
+
+
 def get_progress_summary_for_action_plan(config, params):
     kw = Kiuwan(config)
     endpoint = 'actionPlan'
@@ -167,13 +226,19 @@ def get_available_action_plans(config, params):
 def get_analysis_list(config, params):
     kw = Kiuwan(config)
     endpoint = 'analysis/list'
+    start_date = params.get('start_date')
+    if start_date:
+        start_date = convert_datetime_in_format(start_date)
+    end_date = params.get('end_date')
+    if end_date:
+        end_date = convert_datetime_in_format(end_date)
     payload = {
         'applicationName': params.get('app_name'),
         'auditStatus': params.get('audit_status'),
         'count': params.get('count'),
         'deliveries': params.get('deliveries'),
-        'initDate': params.get('start_date'),
-        'endDate': params.get('end_date'),
+        'initDate': start_date,
+        'endDate': end_date,
         'page': params.get('page'),
         'status': params.get('status')
     }
@@ -386,6 +451,8 @@ def _check_health(config):
 
 
 operations = {
+    'get_application_list': get_application_list,
+    'get_application_defects_list': get_application_defects_list,
     'get_progress_summary_for_action_plan': get_progress_summary_for_action_plan,
     'get_defects_list_for_action_plan': get_defects_list_for_action_plan,
     'get_pending_defects_for_action_plan': get_pending_defects_for_action_plan,
