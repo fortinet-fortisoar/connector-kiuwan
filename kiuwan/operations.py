@@ -126,6 +126,13 @@ def get_application_list(config, params):
     return response
 
 
+def get_application_details(config, params):
+    kw = Kiuwan(config)
+    endpoint = 'apps/{0}'.format(params.get('app_name'))
+    response = kw.make_rest_call(endpoint, 'GET')
+    return response
+
+
 def get_application_defects_list(config, params):
     kw = Kiuwan(config)
     endpoint = 'applications/defects'
@@ -452,6 +459,7 @@ def _check_health(config):
 
 operations = {
     'get_application_list': get_application_list,
+    'get_application_details': get_application_details,
     'get_application_defects_list': get_application_defects_list,
     'get_progress_summary_for_action_plan': get_progress_summary_for_action_plan,
     'get_defects_list_for_action_plan': get_defects_list_for_action_plan,
