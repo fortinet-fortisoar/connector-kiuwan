@@ -3,12 +3,12 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Kiuwan - 1.1.0",
+      "name": "Sample - Kiuwan - 1.2.0",
       "description": "Sample playbooks for \"Kiuwan\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": null,
       "uuid": "ab488569-4415-4af5-9f6b-f3534545f404",
-      "id": 153,
+      "id": 117,
       "deletedAt": null,
       "importedBy": [],
       "recordTags": [],
@@ -44,7 +44,7 @@
                   "analysisLabel": "",
                   "creation_date": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_removed_defects_for_action_plan",
                 "operationTitle": "Get Removed Defects for Action Plan",
@@ -101,7 +101,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "0bb2ca6e-75fa-44fc-b47a-f1a89f0a101b",
-          "id": 2226,
+          "id": 1757,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -166,7 +166,7 @@
                 "params": {
                   "app_name": "myApp"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_last_analysis",
                 "operationTitle": "Get Latest Analysis",
@@ -195,7 +195,101 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "0e247c9e-d7ca-4d7e-be86-56ff657e2ab3",
-          "id": 2234,
+          "id": 1758,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Application Details",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a specific application details from Kiuwan based on the application name you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1671607168,
+          "collection": "/api/3/workflow_collections/ab488569-4415-4af5-9f6b-f3534545f404",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e1f75f87-8e38-421d-8c7f-2d5c07fcfb45",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Application Details",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "app_name": "app_name"
+                },
+                "version": "1.2.0",
+                "connector": "kiuwan",
+                "operation": "get_application_details",
+                "operationTitle": "Get Application Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9c8ca9d4-ebca-4a85-a408-e523a0cf8e76"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "600956a9-a3da-45bd-8384-8115f28f9d51",
+                "title": "Kiuwan: Get Application Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "e1f75f87-8e38-421d-8c7f-2d5c07fcfb45"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Application Details",
+              "targetStep": "/api/3/workflow_steps/9c8ca9d4-ebca-4a85-a408-e523a0cf8e76",
+              "sourceStep": "/api/3/workflow_steps/e1f75f87-8e38-421d-8c7f-2d5c07fcfb45",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a4add7ba-8096-48b8-b8ca-1a3ef4be34fc"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "0e288428-bf34-468d-9bd6-3233cde00220",
+          "id": 1781,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -239,7 +333,7 @@
                   "characteristics": "",
                   "onlyCodeSecurity": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_violated_rules",
                 "operationTitle": "Get Violated Rules",
@@ -296,7 +390,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "0f9c37a0-dba5-4df2-826f-f2b329639cd4",
-          "id": 2238,
+          "id": 1759,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -361,7 +455,7 @@
                 "params": {
                   "code": "A-7e3-16dc9e29131"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_files_defects_details",
                 "operationTitle": "Get Files Defects Details",
@@ -390,7 +484,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "1a4bcfda-8073-401e-897c-bda1f36edec5",
-          "id": 2220,
+          "id": 1760,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -432,7 +526,7 @@
                   "file_name": "",
                   "file_pattern": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "create_mutes_for_rule_or_file",
                 "operationTitle": "Create Mutes for Rule or File",
@@ -489,7 +583,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "2745a280-eff1-4526-b38b-da5c9aa8ca37",
-          "id": 2232,
+          "id": 1761,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -563,7 +657,7 @@
                   "fileContains": "",
                   "characteristics": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_analysis_defects_list",
                 "operationTitle": "Get Analysis Defects List",
@@ -592,7 +686,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "28b2f5ba-9f71-49bd-bbcf-f4cb80b2edc9",
-          "id": 2228,
+          "id": 1762,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -659,7 +753,7 @@
                   "ruleCode": "OPT.JAVA.SEC_JAVA.CrossSiteScriptingRule",
                   "analysisCode": "A-7e3-16e5b1aad2a"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_violated_rule_files",
                 "operationTitle": "Get Violated Rule Files",
@@ -688,7 +782,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "2ae28e94-577e-4c17-99c7-d14f6b246d6e",
-          "id": 2240,
+          "id": 1763,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -727,7 +821,7 @@
                   "status": "TO_REVIEW",
                   "defect_id": "17375778"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "update_defect_status",
                 "operationTitle": "Update Defect Status",
@@ -784,7 +878,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "3f03a2e7-4ea3-4a52-ab9b-c620b5910ca9",
-          "id": 2227,
+          "id": 1764,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -821,7 +915,7 @@
                 "params": {
                   "app_name": "myApp"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_latest_analysis_files_list",
                 "operationTitle": "Get Latest Analysis Files List",
@@ -878,7 +972,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "4679dbd4-83f4-4d4c-821a-ce995aeb0478",
-          "id": 2241,
+          "id": 1765,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -915,7 +1009,7 @@
                 "params": {
                   "app_name": "myApp"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_available_action_plans",
                 "operationTitle": "Get Available Action Plans",
@@ -972,7 +1066,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "641fd199-8394-4441-bb89-6e050c100942",
-          "id": 2237,
+          "id": 1766,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1047,7 +1141,7 @@
                   "creation_date": "",
                   "characteristics": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_pending_defects_for_action_plan",
                 "operationTitle": "Get Pending Defects for Action Plan",
@@ -1076,7 +1170,109 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "6af383a9-bd00-4e8a-bed8-e87c9eb95439",
-          "id": 2223,
+          "id": 1767,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Application List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of all applications for the authenticated user filtered from Kiuwan based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1671442170,
+          "collection": "/api/3/workflow_collections/ab488569-4415-4af5-9f6b-f3534545f404",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b1924a1f-02a0-4689-a7dd-fd05ded04ee3",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Application List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "page": 1,
+                  "count": 500,
+                  "orderBy": "",
+                  "sort_by": false,
+                  "app_name": "",
+                  "activityInfo": "",
+                  "endDateAnalysis": "",
+                  "initDateAnalysis": "",
+                  "exactApplicationName": false
+                },
+                "version": "1.2.0",
+                "connector": "kiuwan",
+                "operation": "get_application_list",
+                "operationTitle": "Get Application List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "33bae3e7-bc06-4b7b-af5b-5a6bc64983f3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "cd0d4b00-edb1-4815-82b1-32f43e41647e",
+                "title": "Kiuwan: Get Application List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b1924a1f-02a0-4689-a7dd-fd05ded04ee3"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Application List",
+              "targetStep": "/api/3/workflow_steps/33bae3e7-bc06-4b7b-af5b-5a6bc64983f3",
+              "sourceStep": "/api/3/workflow_steps/b1924a1f-02a0-4689-a7dd-fd05ded04ee3",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "54d19a9a-2ab4-4b47-9d2b-79325165e2dc"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "6f9a4d96-0788-41db-8b60-90ed26cf9692",
+          "id": 1768,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1143,7 +1339,7 @@
                   "action_name": "ActionPlan",
                   "creation_date": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_defects_list_for_action_plan",
                 "operationTitle": "Get Defects List for Action Plan",
@@ -1172,7 +1368,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "74382e73-e9f6-4da5-829b-e7173d76b1ac",
-          "id": 2230,
+          "id": 1769,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1209,7 +1405,7 @@
                 "params": {
                   "analysis_code": "A-7e3-16e5b1aad2a"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "delete_analysis",
                 "operationTitle": "Delete Analysis",
@@ -1266,7 +1462,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "7cc33bff-4da0-4949-931d-0e7cf45d9ecf",
-          "id": 2222,
+          "id": 1770,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1305,7 +1501,7 @@
                   "prev_code": "A-7e3-16dc9e29131",
                   "defectstype": "New"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_new_removed_defects_list",
                 "operationTitle": "Get New/Removed Defects List",
@@ -1362,7 +1558,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "96de6d51-c993-470f-b09f-7186a6a9a45a",
-          "id": 2236,
+          "id": 1771,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1428,7 +1624,7 @@
                   "code": "A-7e3-16e5b1aad2a",
                   "prev_code": "A-7e3-16dc9e29131"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_comparison_defects",
                 "operationTitle": "Get Comparison Defects",
@@ -1457,7 +1653,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "9ea5d5ef-3754-4be5-beef-f295cd00bf16",
-          "id": 2235,
+          "id": 1772,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1501,7 +1697,7 @@
                   "start_date": "",
                   "audit_status": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_analysis_list",
                 "operationTitle": "Get Analysis List",
@@ -1558,7 +1754,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "acfec2d3-d028-4a2b-9959-9974b7b7c384",
-          "id": 2224,
+          "id": 1773,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1598,7 +1794,7 @@
                   "comment": "",
                   "defect_id": "17375778"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "create_suppresion_rule",
                 "operationTitle": "Create Suppression Rule",
@@ -1655,7 +1851,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "af705ea8-1ed9-4827-a694-4c9c51eb4213",
-          "id": 2225,
+          "id": 1774,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1692,7 +1888,7 @@
                 "params": {
                   "app_name": "myApp"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_application_analysis",
                 "operationTitle": "Get Application Analysis",
@@ -1749,7 +1945,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "b065b343-86fa-47ef-8c47-8d0af249171c",
-          "id": 2221,
+          "id": 1775,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1788,7 +1984,7 @@
                   "action_name": "sample",
                   "creation_date": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_progress_summary_for_action_plan",
                 "operationTitle": "Get Progress Summary for Action Plan",
@@ -1845,7 +2041,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "b1690d83-0d58-4a72-8eed-3936bfcf74a4",
-          "id": 2229,
+          "id": 1776,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1885,7 +2081,7 @@
                   "file_name": "src/main/java/com/myCompany/myApp/CSRFServlet.java",
                   "analysisCode": "A-7e3-16e5b1aad2a"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_file_defects",
                 "operationTitle": "Get File Defects",
@@ -1942,7 +2138,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "c05b9841-2672-4ddf-a81c-c6ca0a6e4b10",
-          "id": 2239,
+          "id": 1777,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1982,7 +2178,7 @@
                   "app_name": "myApp",
                   "filterPurgedAnalyses": true
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_analysis_codes_list",
                 "operationTitle": "Get Analysis Codes List",
@@ -2039,7 +2235,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "c1779f4e-f26f-4628-b217-d7df219aade6",
-          "id": 2231,
+          "id": 1778,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -2104,7 +2300,7 @@
                 "params": {
                   "defect_id": 17375778
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "kiuwan",
                 "operation": "get_defect_notes",
                 "operationTitle": "Get Defect Notes",
@@ -2133,7 +2329,109 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "ce7048d3-a8e9-4878-bd6e-9eb5e1f69dbc",
-          "id": 2233,
+          "id": 1779,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "kiuwan"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Application Defects List",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of all application defects for a indicated application from Kiuwan based on the application name and other input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1671442233,
+          "collection": "/api/3/workflow_collections/ab488569-4415-4af5-9f6b-f3534545f404",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/79d61c86-9ef8-4a2c-b0d0-d0f2756cf8e5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "02604516-210e-49e2-9846-6698fcfe8e04",
+                "title": "Kiuwan: Get Application Defects List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "79d61c86-9ef8-4a2c-b0d0-d0f2756cf8e5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Application Defects List",
+              "description": null,
+              "arguments": {
+                "name": "Kiuwan",
+                "config": "",
+                "params": {
+                  "page": 1,
+                  "count": 500,
+                  "orderBy": "",
+                  "sort_by": false,
+                  "app_name": "android",
+                  "languages": "",
+                  "priorities": "",
+                  "fileContains": "",
+                  "characteristics": ""
+                },
+                "version": "1.2.0",
+                "connector": "kiuwan",
+                "operation": "get_application_defects_list",
+                "operationTitle": "Get Application Defects List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c2145297-e679-48e8-96ad-2c94662a124f"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Application Defects List",
+              "targetStep": "/api/3/workflow_steps/c2145297-e679-48e8-96ad-2c94662a124f",
+              "sourceStep": "/api/3/workflow_steps/79d61c86-9ef8-4a2c-b0d0-d0f2756cf8e5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "40bf2da9-3cd5-4921-9f59-71678b941503"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "da966f66-6db6-491d-a2e8-1d44c97fb95b",
+          "id": 1780,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,

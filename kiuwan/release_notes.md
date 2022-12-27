@@ -1,7 +1,10 @@
 #### What's Added
 
-- Added 'Corporate Domain ID' as a configuration parameter.
+- Added the following operations and respective sample playbooks
+    - Get Application List
+    - Get Application Details
+    - Get Application Defects List
 
 #### What's Fixed
 
-- Fixed a bug where check health was failing with correct configuration.
+- Updated "Get Application Analysis" action with "Application Name" parameter replaced with "Analysis Code".
