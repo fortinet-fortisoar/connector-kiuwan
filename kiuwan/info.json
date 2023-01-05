@@ -10,7 +10,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.2.0/kiuwan/476/kiuwan-v1-2-0",
   "configuration": {
     "fields": [
       {
@@ -66,60 +66,60 @@
     {
       "operation": "get_application_list",
       "title": "Get Application List",
-      "description": "Retrieves a list of all applications for the authenticated user filtered from Kiuwan based on the input parameters you have specified.",
+      "description": "Retrieves a list of all applications for an authenticated user from Kiuwan based on filters like application name, activity info, date range, and other parameters you have specified.",
       "category": "investigation",
       "annotation": "get_application_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Application Name",
-          "description": "(Optional) Specify the name of the application for which you want to retrieve application from Kiuwan.",
+          "description": "((Optional) Specify a name of the application to filter the list of application retrieved from Kiuwan.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "app_name",
-          "tooltip": "(Optional) Specify the name of the application for which you want to retrieve application from Kiuwan."
+          "tooltip": "(Optional) Specify a name of the application to filter the list of application retrieved from Kiuwan."
         },
         {
           "title": "Activity Info",
-          "description": "(Optional) Select the activity based using which you want to controls wether to included creation, baseline and delivery info in Kiuwan",
+          "description": "(Optional) Select the checkbox to include creation, baseline and delivery info in the list of applications retrieved.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "activityInfo",
-          "tooltip": "(Optional) Select the activity based using which you want to controls wether to included creation, baseline and delivery info in Kiuwan"
+          "tooltip": "(Optional) Select the checkbox to include creation, baseline and delivery info in the list of applications retrieved."
         },
         {
           "title": "StartDate Analysis",
-          "description": "(Optional) Specify the initial date to start search applications that are analyzed after this date from Kiuwan.",
+          "description": "(Optional) Specify a start date to fetch applications that were analyzed after this date.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "initDateAnalysis",
-          "tooltip": "(Optional) Specify the initial date to start search applications that are analyzed after this date from Kiuwan."
+          "tooltip": "(Optional) Specify a start date to fetch applications that were analyzed after this date."
         },
         {
           "title": "EndDate Analysis",
-          "description": "(Optional) Specify the end date to start search applications that are analyzed before this date from kiuwan.",
+          "description": "(Optional) Specify an end date to fetch applications that were analyzed before this date.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "endDateAnalysis",
-          "tooltip": "(Optional) Specify the end date to start search applications that are analyzed before this date from kiuwan."
+          "tooltip": "(Optional) Specify an end date to fetch applications that were analyzed before this date."
         },
         {
           "title": "Exact Application Name",
-          "description": "(Optional) Indicates if the applicationName must be equals (ignore case). Note: Only apply if Application Name is provided.",
+          "description": "(Optional) Select the checkbox if you want to match the name exactly as you provided in the Application Name field.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "exactApplicationName",
-          "tooltip": "(Optional) Indicates if the applicationName must be equals (ignore case). Note: Only apply if Application Name is provided.",
+          "tooltip": "(Optional) Select the checkbox if you want to match the name exactly as you provided in the Application Name field.",
           "value": false
         },
         {
@@ -135,24 +135,24 @@
         },
         {
           "title": "Page",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say analysis starting from the 10th analysis. By default, this is set as 1.",
+          "description": "(Optional) Specify the number of pages that this operation returns. By default, this is set to 1.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "page",
-          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say analysis starting from the 10th analysis. By default, this is set as 1.",
+          "tooltip": "(Optional) Specify the number of pages that this operation returns. By default, this is set to 1.",
           "value": 1
         },
         {
           "title": "Order By",
-          "description": "(Optional) Select the option based on which you want to filter the applications retrieved from Kiuwan. You can choose either Application Name or Analysis Date.",
+          "description": "(Optional) Select an option in which to order the applications retrieved. You can choose from Application Name or Analysis Date.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "orderBy",
-          "tooltip": "(Optional) Select the option based on which you want to filter the applications retrieved from Kiuwan. You can choose either Application Name or Analysis Date.",
+          "tooltip": "(Optional) Select an option in which to order the applications retrieved. You can choose from Application Name or Analysis Date.",
           "options": [
             "Application Name",
             "Analysis Date"
@@ -160,13 +160,13 @@
         },
         {
           "title": "Sort By",
-          "description": "(Optional) Select this option (default is selected) to sort the applications retrieved from Kiuwan in the ascending order.",
+          "description": "(Optional) Unselect this checkbox to sort the applications retrieved from Kiuwan in descending order. By default this checkbox is selected and applications are sorted in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "sort_by",
-          "tooltip": "(Optional) Select this option (default is selected) to sort the applications retrieved from Kiuwan in the ascending order.",
+          "tooltip": "(Optional) Unselect this checkbox to sort the applications retrieved from Kiuwan in descending order. By default this checkbox is selected and applications are sorted in ascending order.",
           "value": false
         }
       ],
@@ -238,7 +238,7 @@
     {
       "operation": "get_application_details",
       "title": "Get Application Details",
-      "description": "Retrieves a specific application details from Kiuwan based on the application name you have specified.",
+      "description": "RRetrieves specific application details from Kiuwan based on the application name you have specified.",
       "category": "investigation",
       "annotation": "get_application_details",
       "enabled": true,
@@ -259,30 +259,30 @@
     {
       "operation": "get_application_defects_list",
       "title": "Get Application Defects List",
-      "description": "Retrieves a list of all application defects for a indicated application from Kiuwan based on the application name and other input parameters you have specified.",
+      "description": "Retrieves a list of all application defects for an indicated application from Kiuwan based on the application name, characteristics, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_application_defects_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Application Name",
-          "description": "Specify the name of the application for which you want to retrieve application defects from Kiuwan.",
+          "description": "Specify the name of the application for which you want to retrieve defects from Kiuwan.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "app_name",
-          "tooltip": "Specify the name of the application for which you want to retrieve application defects from Kiuwan."
+          "tooltip": "Specify the name of the application for which you want to retrieve defects from Kiuwan."
         },
         {
           "title": "Characteristics",
-          "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve application defects from Kiuwan. You can specify the following values: Efficiency, Maintainability, Portability, Reliability, or Security.",
+          "description": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve defects from Kiuwan. You can specify the following values: Efficiency, Maintainability, Portability, Reliability, or Security.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "characteristics",
-          "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve application defects from Kiuwan. You can specify the following values: Efficiency, Maintainability, Portability, Reliability, or Security."
+          "tooltip": "(Optional) Specify a comma-separated list of characteristics using which you want to retrieve defects from Kiuwan. You can specify the following values: Efficiency, Maintainability, Portability, Reliability, or Security."
         },
         {
           "title": "File Contains",
@@ -327,24 +327,24 @@
         },
         {
           "title": "Page",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say analysis starting from the 10th analysis. By default, this is set as 1.",
+          "description": "(Optional) Specify the number of pages that this operation returns. By default, this is set to 1.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "page",
-          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful if you want to get a subset of records, say analysis starting from the 10th analysis. By default, this is set as 1.",
+          "tooltip": "(Optional) Specify the number of pages that this operation returns. By default, this is set to 1.",
           "value": 1
         },
         {
           "title": "Order By",
-          "description": "(Optional) Select the option based on which you want to filter the application defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "description": "(Optional) Select an option in which to order the applications retrieved. You can choose from Priority or Effort.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
           "name": "orderBy",
-          "tooltip": "(Optional) Select the option based on which you want to filter the application defects retrieved from Kiuwan. You can choose either Priority or Effort.",
+          "tooltip": "(Optional) Select an option in which to order the applications retrieved. You can choose from Priority or Effort.",
           "options": [
             "Priority",
             "Effort"
@@ -352,13 +352,13 @@
         },
         {
           "title": "Sort By",
-          "description": "(Optional) Select this option (default is selected) to sort the application defects retrieved from Kiuwan in the ascending order.",
+          "description": "(Optional) Unselect this checkbox to sort the applications retrieved from Kiuwan in descending order. By default this checkbox is selected and applications are sorted in ascending order.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "sort_by",
-          "tooltip": "(Optional) Select this option (default is selected) to sort the application defects retrieved from Kiuwan in the ascending order.",
+          "tooltip": "(Optional) Unselect this checkbox to sort the applications retrieved from Kiuwan in descending order. By default this checkbox is selected and applications are sorted in ascending order.",
           "value": false
         }
       ],
@@ -1816,7 +1816,7 @@
     {
       "operation": "get_application_analysis",
       "title": "Get Application Analysis",
-      "description": "Retrieves the analysis results for a concrete analysis from Kiuwan based on the analysis code you have specified.",
+      "description": "Retrieves the analysis results for a concrete analysis from Kiuwan based on the application name you have specified.",
       "category": "investigation",
       "annotation": "get_application_analysis",
       "enabled": true,
